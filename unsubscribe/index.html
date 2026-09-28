@@ -3,8 +3,8 @@
 <meta name="description" content="Stop getting emails from Dentistry Disputed.">
 <meta name="robots" content="noindex,nofollow">
 <link rel="canonical" href="https://dentistrydisputed.com/unsubscribe/">
-<meta property="og:type" content="website"><meta property="og:site_name" content="Dentistry Disputed"><meta property="og:title" content="Unsubscribe · Dentistry Disputed"><meta property="og:description" content="Stop getting emails from Dentistry Disputed."><meta property="og:url" content="https://dentistrydisputed.com/unsubscribe/"><meta property="og:image" content="https://dentistrydisputed.com/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Unsubscribe · Dentistry Disputed"><meta name="twitter:description" content="Stop getting emails from Dentistry Disputed."><meta name="twitter:image" content="https://dentistrydisputed.com/og.jpg">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Dentistry Disputed"><meta property="og:title" content="Unsubscribe · Dentistry Disputed"><meta property="og:description" content="Stop getting emails from Dentistry Disputed."><meta property="og:url" content="https://dentistrydisputed.com/unsubscribe/"><meta property="og:image" content="https://dentistrydisputed.com/og.jpg?v=2"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Unsubscribe · Dentistry Disputed"><meta name="twitter:description" content="Stop getting emails from Dentistry Disputed."><meta name="twitter:image" content="https://dentistrydisputed.com/og.jpg?v=2">
 <meta name="theme-color" content="#101820">
 <link rel="icon" href="/dd-icon.ico?v=4" sizes="16x16 32x32 48x48"><link rel="icon" type="image/png" sizes="16x16" href="/dd-icon-16.png?v=4"><link rel="icon" type="image/png" sizes="32x32" href="/dd-icon-32.png?v=4"><link rel="icon" type="image/png" sizes="48x48" href="/dd-icon-48.png?v=4"><link rel="icon" type="image/png" sizes="192x192" href="/dd-icon-192.png?v=4"><link rel="apple-touch-icon" sizes="180x180" href="/dd-apple-touch-icon.png?v=4"><link rel="manifest" href="/site.webmanifest?v=4"><meta name="apple-mobile-web-app-title" content="Disputed"><meta name="application-name" content="Dentistry Disputed">
 <link rel="preload" href="/assets/montserrat-900.woff2" as="font" type="font/woff2" crossorigin>
@@ -72,6 +72,7 @@ h3{font-size:21px;font-weight:800;letter-spacing:-.01em;line-height:1.2}
 /* ticker */
 .ticker{background:var(--lime);color:var(--ink);overflow:hidden;white-space:nowrap}
 .ticker .track{display:inline-flex;animation:tick 60s linear infinite;padding:17px 0}
+.ticker.js .track{animation:none}   /* moved by script (see the end of the page): iPhones cut off parts of a wide strip the browser animates on its own */
 .ticker span{font-weight:800;font-size:13px;letter-spacing:.16em;text-transform:uppercase;padding:0 22px}
 .ticker span::after{content:"/";color:var(--ink);margin-left:44px}
 @keyframes tick{to{transform:translateX(-50%)}}
