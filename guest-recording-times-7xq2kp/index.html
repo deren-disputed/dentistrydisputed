@@ -21,10 +21,12 @@ a{color:inherit}
 .eyebrow b{color:var(--ink);font-weight:900;margin:0 .4em}
 .nw{white-space:nowrap}
 .dark .eyebrow{color:#b9bcbf} .dark .eyebrow b{color:var(--lime)}
-h1,h2,h3{font-weight:900;letter-spacing:-.02em;line-height:1.04}
+h1,h2,h3{font-weight:900;letter-spacing:-.02em;line-height:1.1;isolation:isolate}
 h2{font-size:clamp(34px,4.4vw,54px)}
 h3{font-size:21px;font-weight:800;letter-spacing:-.01em;line-height:1.2}
-.hl{background:linear-gradient(177deg,transparent 9%,var(--lime) 9%,var(--lime) 91%,transparent 91%);padding:0 .18em;border-radius:5px 16px 7px 14px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.hl{background:linear-gradient(177deg,transparent 9%,var(--lime) 9%,var(--lime) 91%,transparent 91%);padding:0 .18em;border-radius:5px 16px 7px 14px;-webkit-box-decoration-break:clone;box-decoration-break:clone;position:relative;z-index:-1}
+/* the streak paints first, every letter on top of it, so tails of p, g and y are never cut off */
+.hl .hlt{position:relative;z-index:1}
 .dark .hl{color:var(--ink)}
 .hand{font-family:'Rock Salt',cursive;font-weight:400;letter-spacing:0}
 .btn{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:15px 24px;border-radius:999px;border:2px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;font-family:inherit;transition:transform .15s ease,box-shadow .15s ease}
@@ -50,7 +52,7 @@ h3{font-size:21px;font-weight:800;letter-spacing:-.01em;line-height:1.2}
 .hero{padding:76px 0 70px;overflow:hidden}
 .hero .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:56px;align-items:center}
 .hero h1{font-size:clamp(38px,4.5vw,62px);margin-top:20px}
-.hero h1 .hl{display:inline;line-height:1.16}
+.hero h1 .hl{display:inline;line-height:1.2}
 .lede{font-size:18px;line-height:1.65;color:var(--soft);margin-top:24px;max-width:56ch}
 .ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
 .meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:28px;font-weight:800;font-size:11px;letter-spacing:.18em;color:var(--muted)}
@@ -95,10 +97,10 @@ h3{font-size:21px;font-weight:800;letter-spacing:-.01em;line-height:1.2}
 .vote{position:relative;background:var(--ink2);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:36px 30px 30px;text-align:center}
 .vote .ask{font-size:24px;color:var(--lime);transform:rotate(-4deg)}
 .vote .row{display:flex;justify-content:center;gap:22px;margin-top:26px}
-.vote button{font-family:inherit;font-weight:900;font-size:30px;padding:10px 26px 11px;border:0;border-radius:6px;cursor:pointer;box-shadow:0 8px 16px rgba(0,0,0,.35);transition:transform .15s ease}
+.vote button[data-side]{font-family:inherit;font-weight:900;font-size:30px;padding:10px 26px 11px;border:0;border-radius:6px;cursor:pointer;box-shadow:0 8px 16px rgba(0,0,0,.35);transition:transform .15s ease}
 .vote button[data-side=yes]{background:#fff;color:var(--ink);transform:rotate(-6deg)}
 .vote button[data-side=no]{background:var(--lime);color:var(--ink);transform:rotate(5deg)}
-.vote button:hover{transform:rotate(0) scale(1.05)}
+.vote button[data-side]:hover{transform:rotate(0) scale(1.05)}
 .vote button.on{outline:4px solid var(--lime);outline-offset:4px}
 .vote button[data-side=no].on{outline-color:#fff}
 .vote .tally{margin-top:24px;font-size:14px;color:#c9ccd0}
@@ -165,6 +167,8 @@ input:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0
 .sp:hover{border-color:var(--lime)}
 .sp .k{font-weight:800;font-size:11px;letter-spacing:.2em;color:var(--lime)}
 .sp .name{font-weight:900;font-size:clamp(30px,3.4vw,44px);letter-spacing:-.02em;margin-top:18px}
+.sp .name{display:flex;align-items:center;min-height:1.55em}
+.sp .name .wm{display:block;height:clamp(30px,3.2vw,42px);width:auto}
 .sp p{color:#c9ccd0;font-size:15.5px;margin-top:10px}
 .indep{margin-top:30px;color:#c9ccd0;font-size:15.5px;max-width:78ch}
 .indep b{color:#fff}
@@ -244,6 +248,9 @@ footer .fine a{color:#fff}
 .pk-link{font:inherit;font-weight:700;background:none;border:0;padding:0;color:inherit;text-decoration:underline;text-decoration-color:var(--lime);text-decoration-thickness:3px;text-underline-offset:3px;cursor:pointer}
 .dark .pk-bar{background:#2a3440} .dark .pk-bar .y{background:#fff}
 .dark .pk-lbl{color:#fff} .dark .pk-you{color:#c9ccd0} .dark .pk-you b{color:var(--lime)}
+.pk-mail{font:inherit;font-weight:800;font-size:12.5px;letter-spacing:.04em;background:var(--lime);color:var(--ink);border:2px solid var(--ink);border-radius:999px;padding:7px 14px 8px;margin-top:10px;cursor:pointer;transition:transform .12s ease}
+.pk-mail:hover{transform:translateY(-1px)} .dark .pk-mail{border-color:var(--lime)}
+.pk-got{font-size:12.5px;font-weight:700;margin-top:8px;color:var(--soft)} .dark .pk-got{color:#c9ccd0}
 .vote .pk-res{margin-top:22px;text-align:left}
 /* the lead panel after a first vote */
 .lead{position:fixed;right:20px;bottom:20px;z-index:80;width:min(420px,calc(100% - 32px));max-height:calc(100vh - 40px);overflow:auto;background:var(--lime);color:var(--ink);border-radius:16px;padding:24px 22px 18px;box-shadow:0 18px 40px rgba(16,24,32,.3);transform:translateY(24px);opacity:0;transition:transform .25s ease,opacity .25s ease}
@@ -315,7 +322,7 @@ footer .fine a{color:#fff}
 </div></nav>
 <main class="gp"><div class="wrap">
   <div class="eyebrow">You're in <b>/</b> Book your recording</div>
-  <h1>Let's find a time that works for <span class="hl">both sides.</span></h1>
+  <h1>Let's find a time that works for <span class="hl"><span class="hlt">both sides.</span></span></h1>
   <p class="intro">The first guest checks every time that works for them. The other guest only sees those times and picks one. The moment they do, you're both booked and TidyCal sends the calendar invite.</p>
   <div id="ep" class="sch-ep" hidden></div>
   <div id="app" class="sch-app"><p class="sub2">Loading your episode...</p></div>
