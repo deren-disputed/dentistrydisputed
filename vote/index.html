@@ -1,0 +1,12 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Pick a side · Dentistry Disputed</title>
+<meta name="robots" content="noindex"><link rel="canonical" href="https://dentistrydisputed.com/">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="2;url=/#questions">
+<link rel="icon" href="/dd-icon.ico?v=3"></head><body style="background:#C8FF00;font-family:system-ui,sans-serif;color:#101820;display:grid;place-items:center;min-height:100vh;margin:0">
+<p style="font-weight:800;font-size:22px">Taking you to the questions...</p>
+<script>
+(function(){
+  var u = new URLSearchParams(location.search), q = (u.get('q') || '').toLowerCase().replace(/[^a-z0-9-]/g, '');
+  u.delete('q'); if (!u.get('utm_source')) { u.set('utm_source', 'vote-link'); }
+  location.replace('/?' + u.toString() + (q ? '#q-' + q : '#questions'));
+})();
+</script></body></html>
