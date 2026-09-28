@@ -1,4 +1,5 @@
 User-agent: *
 Disallow: /podcast-guest
 Disallow: /podcast-guest.html
+Disallow: /unsubscribe/
 Sitemap: https://dentistrydisputed.com/sitemap.xml

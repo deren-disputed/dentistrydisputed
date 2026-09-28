@@ -6,7 +6,7 @@
 <meta property="og:type" content="website"><meta property="og:site_name" content="Dentistry Disputed"><meta property="og:title" content="Dentistry Disputed"><meta property="og:description" content="A video podcast for everyone in dentistry. Everybody has an opinion; we find two sides who strongly disagree and put them in the same room. Hosted by Allison Norris and Dr. Deren Flesher. New episodes Tuesdays, starting January 2027."><meta property="og:url" content="https://dentistrydisputed.com/"><meta property="og:image" content="https://dentistrydisputed.com/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Dentistry Disputed"><meta name="twitter:description" content="A video podcast for everyone in dentistry. Everybody has an opinion; we find two sides who strongly disagree and put them in the same room. Hosted by Allison Norris and Dr. Deren Flesher. New episodes Tuesdays, starting January 2027."><meta name="twitter:image" content="https://dentistrydisputed.com/og.jpg">
 <meta name="theme-color" content="#101820">
-<link rel="icon" href="/dd-icon.ico?v=3" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/dd-icon-32.png?v=3"><link rel="icon" type="image/png" sizes="192x192" href="/dd-icon-192.png?v=3"><link rel="apple-touch-icon" href="/dd-apple-touch-icon.png?v=3"><link rel="manifest" href="/site.webmanifest">
+<link rel="icon" href="/dd-icon.ico?v=4" sizes="16x16 32x32 48x48"><link rel="icon" type="image/png" sizes="16x16" href="/dd-icon-16.png?v=4"><link rel="icon" type="image/png" sizes="32x32" href="/dd-icon-32.png?v=4"><link rel="icon" type="image/png" sizes="48x48" href="/dd-icon-48.png?v=4"><link rel="icon" type="image/png" sizes="192x192" href="/dd-icon-192.png?v=4"><link rel="apple-touch-icon" sizes="180x180" href="/dd-apple-touch-icon.png?v=4"><link rel="manifest" href="/site.webmanifest?v=4"><meta name="apple-mobile-web-app-title" content="Disputed"><meta name="application-name" content="Dentistry Disputed">
 <link rel="preload" href="/assets/montserrat-900.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/montserrat-500.woff2" as="font" type="font/woff2" crossorigin>
 <style>@font-face{font-family:'Montserrat';font-weight:500;font-style:normal;font-display:swap;src:url(/assets/montserrat-500.woff2) format('woff2')}@font-face{font-family:'Montserrat';font-weight:600;font-style:normal;font-display:swap;src:url(/assets/montserrat-600.woff2) format('woff2')}@font-face{font-family:'Montserrat';font-weight:700;font-style:normal;font-display:swap;src:url(/assets/montserrat-700.woff2) format('woff2')}@font-face{font-family:'Montserrat';font-weight:800;font-style:normal;font-display:swap;src:url(/assets/montserrat-800.woff2) format('woff2')}@font-face{font-family:'Montserrat';font-weight:900;font-style:normal;font-display:swap;src:url(/assets/montserrat-900.woff2) format('woff2')}@font-face{font-family:'Rock Salt';font-weight:400;font-style:normal;font-display:swap;src:url(/assets/rock-salt-400.woff2) format('woff2')}
@@ -44,26 +44,28 @@ h3{font-size:21px;font-weight:800;letter-spacing:-.01em;line-height:1.2}
 .nav ul{display:flex;gap:26px;list-style:none;margin-left:auto}
 .nav ul a{font-weight:800;font-size:12px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none}
 .nav ul a:hover{text-decoration:underline;text-decoration-color:var(--lime);text-decoration-thickness:4px;text-underline-offset:6px}
-.nav .btn{padding:11px 18px;font-size:12px}
+.nav .btn{padding:11px 18px;font-size:12px;white-space:nowrap} .nav .btn .sm{display:none}
 
 /* hero */
 .hero{padding:76px 0 70px;overflow:hidden}
-.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:56px;align-items:center}
 .hero h1{font-size:clamp(38px,4.5vw,62px);margin-top:20px}
 .hero h1 .hl{display:inline;line-height:1.16}
 .lede{font-size:18px;line-height:1.65;color:var(--soft);margin-top:24px;max-width:56ch}
 .ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
 .meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:28px;font-weight:800;font-size:11px;letter-spacing:.18em;color:var(--muted)}
 .meta b{color:var(--ink)}
-.art{position:relative;justify-self:center;width:min(470px,100%);padding:26px 0 64px}
+.art{position:relative;justify-self:center;width:min(470px,100%);padding:36px 0 88px}
+.art .cv{position:relative}
 .art .card{transform:rotate(3deg);filter:drop-shadow(0 22px 34px rgba(16,24,32,.22))}
 .art .card img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
-.stk{position:absolute;font-weight:900;font-size:26px;letter-spacing:.02em;padding:6px 16px 7px;border-radius:5px;box-shadow:0 8px 16px rgba(16,24,32,.28)}
+.stk{position:absolute;font-weight:900;font-size:clamp(18px,1.2vw + 13px,26px);line-height:1.2;letter-spacing:.02em;padding:.22em .6em .26em;white-space:nowrap;border-radius:5px;box-shadow:0 8px 16px rgba(16,24,32,.28)}
 .stk.y{background:var(--ink);color:#fff;transform:rotate(-8deg)}
 .stk.n{background:var(--lime);color:var(--ink);transform:rotate(7deg)}
-.art .stk.y{right:-12px;top:6px} .art .stk.n{right:-26px;top:58px}
+/* stickers sit on the top edge of the cover, clear of the title at every width */
+.art .stk.y{right:13%;bottom:99%} .art .stk.n{right:-3%;bottom:94.5%}
 .note{position:absolute;left:-6px;bottom:0;font-size:19px;line-height:1.5;transform:rotate(-4deg);color:var(--ink)}
-.note .swash{width:150px;height:14px;color:var(--lime);margin:2px 0 0 60px;overflow:visible}
+.note .swash{display:block;width:150px;height:14px;color:var(--lime);margin:4px 0 0 44px;overflow:visible}
 
 /* ticker */
 .ticker{background:var(--lime);color:var(--ink);overflow:hidden;white-space:nowrap}
@@ -78,15 +80,15 @@ h3{font-size:21px;font-weight:800;letter-spacing:-.01em;line-height:1.2}
 .s.white{background:#fff}
 .dark{background:var(--ink);color:#fff}
 .lime-bg{background:var(--lime);color:var(--ink)}
-.head{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:end;margin-bottom:44px}
+.head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:40px;align-items:end;margin-bottom:44px}
 .head h2{margin-top:12px}
 .head p{font-size:17px;color:var(--soft);max-width:52ch}
-.head.solo{grid-template-columns:1fr}
+.head.solo{grid-template-columns:minmax(0,1fr)}
 .head.solo h2{max-width:28ch}
 .dark .head p{color:#c9ccd0}
 
 /* up first */
-.first .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center}
+.first .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:56px;align-items:center}
 .chip{display:inline-block;background:var(--lime);color:var(--ink);font-weight:800;font-size:12px;letter-spacing:.16em;padding:7px 12px 6px;border-radius:4px}
 .first h2{margin-top:18px}
 .first p.who{font-size:18px;color:#c9ccd0;margin-top:20px;max-width:54ch;line-height:1.65}
@@ -106,7 +108,7 @@ h3{font-size:21px;font-weight:800;letter-spacing:-.01em;line-height:1.2}
 .chips button{font-family:inherit;font-weight:800;font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding:9px 14px;border-radius:999px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
 .chips button:hover{box-shadow:inset 0 -5px 0 var(--lime)}
 .chips button.on{background:var(--lime);border-color:var(--lime);color:var(--ink);box-shadow:none}
-.qs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.qs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
 .q{background:#fff;border:1px solid var(--gray);border-radius:12px;padding:26px 26px 28px;display:flex;flex-direction:column;gap:12px;transition:transform .15s ease,box-shadow .15s ease}
 .q:hover{transform:translateY(-3px);box-shadow:8px 8px 0 var(--lime);border-color:var(--ink)}
 .q .k{display:flex;justify-content:space-between;align-items:center;font-weight:800;font-size:11px;letter-spacing:.18em}
@@ -119,10 +121,10 @@ h3{font-size:21px;font-weight:800;letter-spacing:-.01em;line-height:1.2}
 .platforms .p{font-weight:800;font-size:11px;letter-spacing:.16em;text-transform:uppercase;border:1.5px solid var(--ink);border-radius:999px;padding:7px 12px 6px}
 
 /* how */
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}
 .steps .n{width:46px;height:46px;border-radius:50%;background:var(--lime);display:grid;place-items:center;font-weight:900;font-size:18px;margin-bottom:16px}
 .steps p{font-size:15px;color:var(--soft);margin-top:8px}
-.fmts{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:56px}
+.fmts{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin-top:56px}
 .fmts>div{border:1.5px solid var(--ink);border-radius:10px;padding:20px 18px}
 .fmts .k{display:inline-block;background:var(--lime);font-weight:900;font-size:12px;letter-spacing:.14em;padding:5px 8px 4px;border-radius:3px}
 .fmts p{font-size:14px;color:var(--soft);margin-top:8px}
@@ -132,8 +134,8 @@ h3{font-size:21px;font-weight:800;letter-spacing:-.01em;line-height:1.2}
 .hosts-head{display:flex;flex-wrap:wrap;align-items:flex-end;gap:10px 26px;margin-bottom:46px}
 .hosts-head h2{margin-top:12px}
 .hosts-head .hand{font-size:clamp(24px,2.6vw,34px);transform:rotate(-5deg);margin-bottom:6px}
-.hosts{display:grid;grid-template-columns:1fr 1fr;gap:34px}
-.host{display:grid;grid-template-columns:220px 1fr;gap:24px;align-items:end;background:rgba(255,255,255,.55);border-radius:14px;padding:26px 28px 28px}
+.hosts{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:34px}
+.host{display:grid;grid-template-columns:220px minmax(0,1fr);gap:24px;align-items:end;background:rgba(255,255,255,.55);border-radius:14px;padding:26px 28px 28px}
 .host .ph{position:relative;align-self:end}
 .host .ph img{width:auto;height:190px;max-width:none;filter:drop-shadow(0 12px 18px rgba(16,24,32,.18))}
 .host .ph img.d{height:234px}
@@ -142,7 +144,7 @@ h3{font-size:21px;font-weight:800;letter-spacing:-.01em;line-height:1.2}
 .host .role{font-weight:800;font-size:11px;letter-spacing:.18em;margin-top:12px;color:#26303a}
 
 /* forms */
-.two{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px}
 .panel{background:#fff;border:1px solid var(--gray);border-radius:14px;padding:36px}
 .panel h2{font-size:clamp(28px,3vw,38px);margin-top:10px}
 .panel p.l{font-size:16px;color:var(--soft);margin:14px 0 22px}
@@ -151,14 +153,14 @@ label{display:grid;gap:6px;font-weight:700;font-size:13px;letter-spacing:.02em}
 input,textarea{font-family:inherit;font-weight:500;font-size:16px;color:var(--ink);background:var(--paper);border:1.5px solid var(--gray);border-radius:8px;padding:12px 14px;width:100%}
 textarea{min-height:96px;resize:vertical}
 input:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--lime)}
-.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.row2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px}
 .toast,.err{display:none;margin-top:12px;font-size:14px;font-weight:600;border-radius:8px;padding:12px 14px}
 .toast{background:var(--lime);color:var(--ink)}
 .err{background:#fff;border:1.5px solid var(--ink)}
 .toast.show,.err.show{display:block}
 
 /* sponsors */
-.spon{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.spon{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px}
 .sp{display:block;text-decoration:none;border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:34px 34px 36px;background:var(--ink2);transition:border-color .15s ease}
 .sp:hover{border-color:var(--lime)}
 .sp .k{font-weight:800;font-size:11px;letter-spacing:.2em;color:var(--lime)}
@@ -170,9 +172,9 @@ input:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0
 
 /* subscribe */
 .sub{padding:84px 0}
-.sub .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.sub .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:center}
 .sub .subl{font-size:18px;font-weight:600;margin-top:14px;max-width:44ch}
-.sub form{grid-template-columns:1fr auto;align-items:start}
+.sub form{grid-template-columns:minmax(0,1fr) auto;align-items:start}
 .sub input{background:#fff;border-color:var(--ink);font-size:17px;padding:15px 16px}
 .sub .toast{background:var(--ink);color:#fff;grid-column:1/-1}
 .sub .err{grid-column:1/-1}
@@ -191,10 +193,11 @@ footer .fine a{color:#fff}
 .gp{padding:72px 0 90px}
 .gp h1{font-size:clamp(40px,6vw,76px);margin-top:16px}
 .gp .intro{font-size:18px;color:var(--soft);max-width:62ch;margin-top:20px;line-height:1.65}
-.check{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:40px 0 36px}
+.check{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin:40px 0 36px}
 .check div{background:#fff;border:1px solid var(--gray);border-radius:12px;padding:22px}
 .check p{font-size:14.5px;color:var(--soft);margin-top:8px}
-.embedwrap{background:var(--lime);border-radius:16px;padding:18px;min-height:640px}
+.gp-help{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;background:var(--lime);border-radius:16px;padding:26px 30px}
+.gp-help p{margin-top:6px;color:var(--soft)}
 .gp .help{margin-top:16px;font-size:14px;color:var(--muted)}
 .gp .help a{color:var(--ink);font-weight:700}
 
@@ -206,19 +209,20 @@ footer .fine a{color:#fff}
 /* responsive */
 @media (max-width:1040px){
   .nav ul{display:none} .nav .btn{margin-left:auto}
-  .hero .wrap,.first .wrap,.head,.sub .wrap{grid-template-columns:1fr}
+  .hero .wrap,.first .wrap,.head,.sub .wrap{grid-template-columns:minmax(0,1fr)}
   .art{width:min(420px,88%);margin-top:10px}
-  .qs{grid-template-columns:1fr 1fr} .steps{grid-template-columns:1fr 1fr} .fmts{grid-template-columns:repeat(3,1fr)}
-  .hosts,.two,.spon{grid-template-columns:1fr} .check{grid-template-columns:1fr 1fr}
+  .qs{grid-template-columns:minmax(0,1fr) minmax(0,1fr)} .steps{grid-template-columns:minmax(0,1fr) minmax(0,1fr)} .fmts{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .hosts,.two,.spon{grid-template-columns:minmax(0,1fr)} .check{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
 }
+@media (max-width:400px){ .hero .eyebrow .nw{display:block;white-space:normal} .hero .eyebrow b{display:none} .hero .eyebrow{letter-spacing:.16em;line-height:1.8} .nav .btn .lg{display:none} .nav .btn .sm{display:inline} }
+@media (max-width:340px){ .hero .eyebrow{letter-spacing:.1em;font-size:11px} }
 @media (max-width:640px){
   .wrap{width:calc(100% - 32px)}
   .nav .wrap{height:64px;gap:14px} .nav .logo img{height:24px} .nav .btn{padding:10px 14px;font-size:11px;letter-spacing:.1em}
   .hero{padding:48px 0 56px} .s{padding:68px 0} .sub{padding:64px 0}
-  .qs,.steps,.fmts,.row2,.check{grid-template-columns:1fr}
-  .host{grid-template-columns:1fr;padding:22px}
-  .panel{padding:24px} .sub form{grid-template-columns:1fr}
-  .art .stk.n{right:-6px} .art .stk.y{right:4px}
+  .qs,.steps,.fmts,.row2,.check{grid-template-columns:minmax(0,1fr)}
+  .host{grid-template-columns:minmax(0,1fr);padding:22px}
+  .panel{padding:24px} .sub form{grid-template-columns:minmax(0,1fr)}
   .art{padding-bottom:0} .note{position:static;margin:22px 0 0 6px}
 }
 
@@ -266,6 +270,7 @@ footer .fine a{color:#fff}
 .legal .lede2{font-size:19px;margin-top:18px;max-width:60ch}
 .legal h2{font-size:24px;margin-top:40px}
 .legal p{font-size:16.5px;color:var(--soft);max-width:68ch;margin-top:10px;line-height:1.65}
+.u-box{margin-top:30px} .u-box .err{max-width:52ch} #u-back{margin-top:28px}
 .legal a{color:var(--ink);font-weight:700}
 /* the guest scheduler */
 .sch-ep{margin-top:30px;background:var(--ink);color:#fff;border-radius:14px;padding:18px 22px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
@@ -276,7 +281,7 @@ footer .fine a{color:#fff}
 .sch-note{background:var(--lime);border-radius:10px;padding:12px 14px;font-weight:600;font-size:14.5px;margin:16px 0 0}
 .sch-note.bad{background:#fff;border:1.5px solid var(--ink)}
 .sch-tz{font-size:12px;color:var(--muted);font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin:18px 0 6px}
-.sch-day{display:grid;grid-template-columns:130px 1fr;gap:12px;align-items:start;padding:14px 0;border-top:1px solid var(--gray)}
+.sch-day{display:grid;grid-template-columns:130px minmax(0,1fr);gap:12px;align-items:start;padding:14px 0;border-top:1px solid var(--gray)}
 .sch-day h4{font-weight:800;font-size:14px;margin-top:9px}
 .sch-times{display:flex;flex-wrap:wrap;gap:8px}
 .sch-t{font-family:inherit;font-weight:700;font-size:14px;padding:9px 12px;border-radius:8px;border:1.5px solid var(--ink);background:#fff;color:var(--ink);cursor:pointer;min-width:96px;transition:box-shadow .12s ease}
@@ -294,7 +299,7 @@ footer .fine a{color:#fff}
 .sch-list{margin:14px 0 0 20px;font-weight:600;line-height:1.8}
 .sch-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
 .sch-none{margin-top:16px;display:grid;gap:10px;max-width:560px}
-@media (max-width:640px){.sch-app{padding:20px}.sch-day{grid-template-columns:1fr;gap:6px}.sch-t{min-width:0;flex:1 1 28%}}
+@media (max-width:640px){.sch-app{padding:20px}.sch-day{grid-template-columns:minmax(0,1fr);gap:6px}.sch-t{min-width:0;flex:1 1 28%}}
 </style>
 </head><body>
 <nav class="nav" aria-label="Main"><div class="wrap">
@@ -306,7 +311,7 @@ footer .fine a{color:#fff}
     <li><a href="/#guest">Be a guest</a></li>
     <li><a href="/#sponsors">Sponsors</a></li>
   </ul>
-  <a class="btn lime" href="/#subscribe">Get the first episode</a>
+  <a class="btn lime" href="/#subscribe" aria-label="Get the first episode"><span class="lg">Get the first episode</span><span class="sm">Get ep. 1</span></a>
 </div></nav>
 <main>
 <header class="hero" id="top"><div class="wrap">
@@ -318,8 +323,8 @@ footer .fine a{color:#fff}
     <div class="meta"><span>WITH <b>ALLISON NORRIS</b> &amp; <b>DR. DEREN FLESHER</b></span><span>VIDEO + AUDIO</span><span>SEASON 1</span></div>
   </div>
   <div class="art" aria-hidden="true">
-    <div class="card" style="clip-path:polygon(0.00% 0.45%,3.57% 0.21%,7.14% 0.91%,10.71% 0.10%,14.29% 0.75%,17.86% 0.51%,21.43% 0.08%,25.00% 0.71%,28.57% 0.05%,32.14% 0.61%,35.71% 0.10%,39.29% 0.13%,42.86% 0.59%,46.43% 1.16%,50.00% 0.17%,53.57% 0.31%,57.14% 0.88%,60.71% 1.33%,64.29% 0.81%,67.86% 0.56%,71.43% 1.37%,75.00% 0.07%,78.57% 1.20%,82.14% 0.41%,85.71% 0.20%,89.29% 0.16%,92.86% 0.43%,96.43% 1.14%,100.00% 0.25%,99.19% 3.57%,99.11% 7.14%,99.48% 10.71%,99.23% 14.29%,99.91% 17.86%,99.92% 21.43%,99.71% 25.00%,99.05% 28.57%,99.40% 32.14%,99.56% 35.71%,99.18% 39.29%,99.37% 42.86%,99.58% 46.43%,98.89% 50.00%,99.02% 53.57%,99.66% 57.14%,99.20% 60.71%,99.26% 64.29%,98.77% 67.86%,98.98% 71.43%,99.60% 75.00%,98.63% 78.57%,99.83% 82.14%,99.41% 85.71%,98.94% 89.29%,99.79% 92.86%,99.32% 96.43%,99.95% 100.00%,96.43% 99.06%,92.86% 98.93%,89.29% 99.20%,85.71% 98.77%,82.14% 99.56%,78.57% 99.03%,75.00% 99.17%,71.43% 99.19%,67.86% 99.36%,64.29% 98.82%,60.71% 98.68%,57.14% 99.34%,53.57% 99.07%,50.00% 99.92%,46.43% 99.02%,42.86% 99.09%,39.29% 98.61%,35.71% 98.85%,32.14% 99.60%,28.57% 99.46%,25.00% 99.06%,21.43% 99.97%,17.86% 99.35%,14.29% 99.76%,10.71% 99.84%,7.14% 99.92%,3.57% 98.92%,0.00% 99.82%,0.35% 96.43%,0.55% 92.86%,1.22% 89.29%,0.11% 85.71%,0.63% 82.14%,0.77% 78.57%,1.24% 75.00%,1.15% 71.43%,1.21% 67.86%,0.39% 64.29%,0.58% 60.71%,0.50% 57.14%,1.24% 53.57%,1.34% 50.00%,0.21% 46.43%,0.25% 42.86%,0.32% 39.29%,0.33% 35.71%,0.68% 32.14%,0.82% 28.57%,0.37% 25.00%,0.01% 21.43%,0.59% 17.86%,0.52% 14.29%,0.79% 10.71%,1.33% 7.14%,0.97% 3.57%)"><img src="/assets/cover.jpg" alt="" width="1000" height="1000"></div>
-    <span class="stk y">YES</span><span class="stk n">NO</span>
+    <div class="cv"><div class="card" style="clip-path:polygon(0.00% 0.45%,3.57% 0.21%,7.14% 0.91%,10.71% 0.10%,14.29% 0.75%,17.86% 0.51%,21.43% 0.08%,25.00% 0.71%,28.57% 0.05%,32.14% 0.61%,35.71% 0.10%,39.29% 0.13%,42.86% 0.59%,46.43% 1.16%,50.00% 0.17%,53.57% 0.31%,57.14% 0.88%,60.71% 1.33%,64.29% 0.81%,67.86% 0.56%,71.43% 1.37%,75.00% 0.07%,78.57% 1.20%,82.14% 0.41%,85.71% 0.20%,89.29% 0.16%,92.86% 0.43%,96.43% 1.14%,100.00% 0.25%,99.19% 3.57%,99.11% 7.14%,99.48% 10.71%,99.23% 14.29%,99.91% 17.86%,99.92% 21.43%,99.71% 25.00%,99.05% 28.57%,99.40% 32.14%,99.56% 35.71%,99.18% 39.29%,99.37% 42.86%,99.58% 46.43%,98.89% 50.00%,99.02% 53.57%,99.66% 57.14%,99.20% 60.71%,99.26% 64.29%,98.77% 67.86%,98.98% 71.43%,99.60% 75.00%,98.63% 78.57%,99.83% 82.14%,99.41% 85.71%,98.94% 89.29%,99.79% 92.86%,99.32% 96.43%,99.95% 100.00%,96.43% 99.06%,92.86% 98.93%,89.29% 99.20%,85.71% 98.77%,82.14% 99.56%,78.57% 99.03%,75.00% 99.17%,71.43% 99.19%,67.86% 99.36%,64.29% 98.82%,60.71% 98.68%,57.14% 99.34%,53.57% 99.07%,50.00% 99.92%,46.43% 99.02%,42.86% 99.09%,39.29% 98.61%,35.71% 98.85%,32.14% 99.60%,28.57% 99.46%,25.00% 99.06%,21.43% 99.97%,17.86% 99.35%,14.29% 99.76%,10.71% 99.84%,7.14% 99.92%,3.57% 98.92%,0.00% 99.82%,0.35% 96.43%,0.55% 92.86%,1.22% 89.29%,0.11% 85.71%,0.63% 82.14%,0.77% 78.57%,1.24% 75.00%,1.15% 71.43%,1.21% 67.86%,0.39% 64.29%,0.58% 60.71%,0.50% 57.14%,1.24% 53.57%,1.34% 50.00%,0.21% 46.43%,0.25% 42.86%,0.32% 39.29%,0.33% 35.71%,0.68% 32.14%,0.82% 28.57%,0.37% 25.00%,0.01% 21.43%,0.59% 17.86%,0.52% 14.29%,0.79% 10.71%,1.33% 7.14%,0.97% 3.57%)"><img src="/assets/cover.jpg" alt="" width="1000" height="1000"></div>
+    <span class="stk y">YES</span><span class="stk n">NO</span></div>
     <div class="note hand">Same industry.<br>Different views.<svg class="swash" viewBox="0 0 300 32" preserveAspectRatio="none" aria-hidden="true"><path d="M6 22 C 60 10, 120 28, 180 16 S 268 8, 294 14" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/></svg></div>
   </div>
 </div></header>
@@ -378,9 +383,9 @@ footer .fine a{color:#fff}
     <div class="eyebrow">Be a guest</div>
     <h2>Got a strong opinion? <span class="hl">Say it on camera.</span></h2>
     <p class="l">Dentists, hygienists, office managers, DSO people, vendors, consultants. Anyone who actually works in this industry and has an opinion they'd say out loud. Tell us the question and where you stand. If it fits, Allison will reach out.</p>
-    <form id="guestform" onsubmit="return ddSubmit(event,'Guest application')">
+    <form id="guestform" onsubmit="return ddSubmit(event,'apply')"><input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="row2"><label for="g-name">Name<input id="g-name" name="name" required autocomplete="name"></label><label for="g-email">Email<input id="g-email" name="email" type="email" required autocomplete="email"></label></div>
-      <div class="row2"><label for="g-cred">What you do<input id="g-cred" name="credentials" placeholder="DDS, practice owner, hygienist..."></label><label for="g-org">Company or practice<input id="g-org" name="company"></label></div>
+      <div class="row2"><label for="g-cred">What you do<input id="g-cred" name="credentials" placeholder="DDS, RDH, practice owner"></label><label for="g-org">Company or practice<input id="g-org" name="company"></label></div>
       <label for="g-li">LinkedIn<input id="g-li" name="linkedin" placeholder="https://linkedin.com/in/"></label>
       <label for="g-q">The question, and where you stand<textarea id="g-q" name="question_and_side" required placeholder="Dental insurance is not a scam, and I ran a PPO network for nine years, so..."></textarea></label>
       <div><button class="btn lime" type="submit">Send it in</button><div class="toast">Got it. If it fits a question we're doing, you'll hear from Allison.</div><div class="err"></div></div>
@@ -390,7 +395,7 @@ footer .fine a{color:#fff}
     <div class="eyebrow">Suggest a question</div>
     <h2>What should we<br><span class="hl">take on next?</span></h2>
     <p class="l">The question, why people disagree about it, and who you'd want to hear from. The good ones become episodes and we say your name on air.</p>
-    <form id="qform" onsubmit="return ddSubmit(event,'Question suggested')">
+    <form id="qform" onsubmit="return ddSubmit(event,'suggest')"><input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
       <label for="m-q">The question<textarea id="m-q" name="question" placeholder="Is dental insurance a scam?" required></textarea></label>
       <label for="m-why">Why people disagree<textarea id="m-why" name="why" placeholder="Annual maximums haven't moved since the 1970s, but 37 states passed reform laws last year..."></textarea></label>
       <div class="row2"><label for="m-yes">Who'd say yes<input id="m-yes" name="yes_side" placeholder="Name or role"></label><label for="m-no">Who'd say no<input id="m-no" name="no_side" placeholder="Name or role"></label></div>
@@ -411,7 +416,7 @@ footer .fine a{color:#fff}
 
 <section class="sub lime-bg" id="subscribe" aria-label="Get the first episode"><div class="wrap">
   <div><h2>Never miss a Tuesday.</h2><p class="subl">Get the first episode the morning it drops. One email when each episode is out. That's it.</p></div>
-  <form onsubmit="return ddSubscribe(event)"><input type="email" id="nl-email" name="email" required placeholder="you@practice.com" aria-label="Email address" autocomplete="email"><button class="btn ink" type="submit">Subscribe</button><div class="toast">You're on the list.</div><div class="err"></div></form>
+  <form onsubmit="return ddSubscribe(event)"><input type="email" id="nl-email" name="email" required placeholder="you@practice.com" aria-label="Email address" autocomplete="email"><button class="btn ink" type="submit">Subscribe</button><input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true"><div class="toast">You're on the list.</div><div class="err"></div></form>
 </div></section>
 </main>
 
@@ -455,24 +460,6 @@ footer .fine a{color:#fff}
     <span>Guests speak for themselves. Nothing here is clinical, legal or financial advice.</span>
   </div>
 </div></footer>
-<script>
-async function ddSubmit(e, kind){
-  e.preventDefault();
-  const f=e.target, btn=f.querySelector('button[type=submit]'), ok=f.querySelector('.toast'), err=f.querySelector('.err');
-  btn.disabled=true; ok.classList.remove('show'); err.classList.remove('show');
-  const data=Object.fromEntries(new FormData(f).entries()); data._subject='[Dentistry Disputed] '+kind; data._template='table';
-  try{
-    const r=await fetch('https://formsubmit.co/ajax/deren@dentistrydisputed.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)});
-    if(!r.ok) throw new Error('bad status');
-    ok.classList.add('show'); f.reset();
-  }catch(x){
-    const body=encodeURIComponent(Object.entries(data).filter(([k])=>!k.startsWith('_')).map(([k,v])=>k+': '+v).join('\n'));
-    err.innerHTML='Something blocked that. <a href="mailto:podcast@dentistrydisputed.com?subject='+encodeURIComponent(kind)+'&body='+body+'">Send it by email instead</a>.';
-    err.classList.add('show');
-  }
-  btn.disabled=false; return false;
-}
-</script>
 <script>
 (function(){
   var API = "https://script.google.com/macros/s/AKfycbypPXJT6DHX6_v-mBlTYHV40gCF-sczAYdS-30GoFa7S-p4vHgErRhxdz__N3iJEU9q/exec";
@@ -531,7 +518,7 @@ async function ddSubmit(e, kind){
     openLead(q, side);
   }
   function share(q){
-    var url = 'https://dentistrydisputed.com/vote/?q=' + q + '&utm_source=share&utm_medium=vote';
+    var url = 'https://dentistrydisputed.com/vote/' + q + '?utm_source=share&utm_medium=vote';
     var text = (QT[q] || 'Pick a side.') + ' Pick a side:';
     if (navigator.share) { navigator.share({ title: 'Dentistry Disputed', text: text, url: url }).catch(function(){}); return; }
     try { navigator.clipboard.writeText(text + ' ' + url); } catch(e) {}
@@ -570,20 +557,46 @@ async function ddSubmit(e, kind){
       post({ a: 'lead', email: d.email, name: d.name || '', role: d.role || '', company: d.company || '', news: true,
              hiring: !!d.hiring, openrole: !!d.openrole, phones: !!d.phones, q: d.q, side: d.side, vid: vid(),
              src: src.s, med: src.m, cmp: src.c, where: 'vote panel', hp: d.website || '' })
-        .then(function(r){ if (!r || !r.ok) throw new Error('no'); ok.classList.add('show'); setTimeout(function(){ closeLead('done'); }, 2200); })
+        .then(function(r){ if (!r || !r.ok) throw new Error('no'); ok.textContent = r.fresh ? "You're on the list. Check your inbox." : "You're already on the list. We'll send the results."; ok.classList.add('show'); setTimeout(function(){ closeLead('done'); }, 2600); })
         .catch(function(){ err.textContent = 'That didn\'t go through. Try again, or email podcast@dentistrydisputed.com.'; err.classList.add('show'); btn.disabled = false; });
     });
   }
-  // newsletter signups go to the same sheet; FormSubmit is the fallback
+  // email signups and the two forms go to the show's sheet; if that fails, email is the fallback
+  function fail(err, subj, d, lead){
+    var text = Object.keys(d || {}).filter(function(k){ return k !== 'website' && d[k]; }).map(function(k){ return k + ': ' + d[k]; }).join('\n');
+    err.innerHTML = lead + ' <a href="mailto:podcast@dentistrydisputed.com?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(text) + '">Email it to us instead</a>.';
+    err.classList.add('show');
+  }
   window.ddSubscribe = function(e){
     e.preventDefault();
     var f = e.target, ok = f.querySelector('.toast'), err = f.querySelector('.err'), btn = f.querySelector('button[type=submit]');
-    var email = f.querySelector('[name=email]').value;
-    if (!API) return window.ddSubmit(e, 'Newsletter signup');
-    btn.disabled = true; err.classList.remove('show');
-    post({ a: 'subscribe', email: email, vid: vid(), src: src.s, med: src.m, cmp: src.c, where: 'subscribe form' })
-      .then(function(r){ if (!r || !r.ok) throw new Error('no'); ok.classList.add('show'); f.reset(); store('dd_lead', 'done'); })
-      .catch(function(){ return window.ddSubmit(e, 'Newsletter signup'); })
+    var email = f.querySelector('[name=email]').value, hp = (f.querySelector('[name=website]') || {}).value || '';
+    btn.disabled = true; ok.classList.remove('show'); err.classList.remove('show');
+    post({ a: 'subscribe', email: email, vid: vid(), src: src.s, med: src.m, cmp: src.c, where: 'subscribe form', hp: hp })
+      .then(function(r){
+        if (!r || !r.ok) throw new Error(r && r.error || 'no');
+        ok.textContent = r.fresh ? "You're on the list. Check your inbox for a welcome note." : "You're already on the list. We'll email you when the first episode drops.";
+        ok.classList.add('show'); f.reset(); store('dd_lead', 'done');
+      })
+      .catch(function(x){
+        if (String(x && x.message) === 'bad_email') { err.textContent = 'That email address doesn\'t look right. Check it and try again.'; err.classList.add('show'); return; }
+        fail(err, 'Add me to the list', { email: email }, 'That didn\'t go through.');
+      })
+      .then(function(){ btn.disabled = false; });
+    return false;
+  };
+  window.ddSubmit = function(e, kind){
+    e.preventDefault();
+    var f = e.target, ok = f.querySelector('.toast'), err = f.querySelector('.err'), btn = f.querySelector('button[type=submit]');
+    var d = Object.fromEntries(new FormData(f).entries()), body = { a: kind, vid: vid(), src: src.s, hp: d.website || '' };
+    Object.keys(d).forEach(function(k){ if (k !== 'website') body[k] = d[k]; });
+    btn.disabled = true; ok.classList.remove('show'); err.classList.remove('show');
+    post(body)
+      .then(function(r){ if (!r || !r.ok) throw new Error(r && r.error || 'no'); ok.classList.add('show'); f.reset(); })
+      .catch(function(x){
+        var m = String(x && x.message);
+        fail(err, kind === 'apply' ? 'Guest application' : 'Question idea', d, m === 'slow_down' ? 'That was a lot of sends in a row.' : m === 'missing' ? 'A required field is empty.' : 'That didn\'t go through.');
+      })
       .then(function(){ btn.disabled = false; });
     return false;
   };
