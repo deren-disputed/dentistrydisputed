@@ -221,6 +221,80 @@ footer .fine a{color:#fff}
   .art .stk.n{right:-6px} .art .stk.y{right:4px}
   .art{padding-bottom:0} .note{position:static;margin:22px 0 0 6px}
 }
+
+[hidden]{display:none!important}
+/* votes on every question */
+.q .pk{margin-top:auto;padding-top:16px;border-top:1px dashed var(--gray);display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px}
+.pk .ask{font-size:15px;transform:rotate(-3deg);margin-right:4px}
+.pk-b{font-family:inherit;font-weight:900;font-size:14px;letter-spacing:.06em;padding:7px 15px 8px;border-radius:5px;border:2px solid var(--ink);cursor:pointer;transition:transform .12s ease}
+.pk-b.y{background:var(--ink);color:#fff;transform:rotate(-3deg)}
+.pk-b.n{background:var(--lime);border-color:var(--lime);color:var(--ink);transform:rotate(3deg)}
+.pk-b:hover{transform:rotate(0) scale(1.06)}
+.pk-res{width:100%}
+.pk-bar{display:flex;height:14px;border-radius:999px;overflow:hidden;background:var(--gray)}
+.pk-bar i{display:block;height:100%;transition:width .7s ease}
+.pk-bar .y{background:var(--ink)} .pk-bar .n{background:var(--lime)}
+.pk-lbl{display:flex;justify-content:space-between;font-weight:900;font-size:12px;letter-spacing:.12em;margin-top:8px}
+.pk-you{font-size:13px;color:var(--soft);margin-top:6px;line-height:1.5}
+.pk-you b{color:var(--ink);text-transform:uppercase;font-weight:900}
+.pk-link{font:inherit;font-weight:700;background:none;border:0;padding:0;color:inherit;text-decoration:underline;text-decoration-color:var(--lime);text-decoration-thickness:3px;text-underline-offset:3px;cursor:pointer}
+.dark .pk-bar{background:#2a3440} .dark .pk-bar .y{background:#fff}
+.dark .pk-lbl{color:#fff} .dark .pk-you{color:#c9ccd0} .dark .pk-you b{color:var(--lime)}
+.vote .pk-res{margin-top:22px;text-align:left}
+/* the lead panel after a first vote */
+.lead{position:fixed;right:20px;bottom:20px;z-index:80;width:min(420px,calc(100% - 32px));max-height:calc(100vh - 40px);overflow:auto;background:var(--lime);color:var(--ink);border-radius:16px;padding:24px 22px 18px;box-shadow:0 18px 40px rgba(16,24,32,.3);transform:translateY(24px);opacity:0;transition:transform .25s ease,opacity .25s ease}
+.lead.show{transform:none;opacity:1}
+.lead h3{font-size:22px;line-height:1.15;margin-right:30px}
+.lead p{font-size:14.5px;margin-top:8px;line-height:1.5}
+.lead form{gap:10px;margin-top:14px}
+.lead input,.lead select{background:#fff;border:1.5px solid var(--ink)}
+.lead select{font-family:inherit;font-weight:500;font-size:15px;padding:11px 12px;border-radius:8px;width:100%;color:var(--ink)}
+.lead .opt{display:grid;gap:7px;margin-top:2px}
+.lead .opt b{font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.lead .opt label{display:flex;gap:9px;align-items:flex-start;font-weight:600;font-size:13.5px;letter-spacing:0;line-height:1.4}
+.lead .opt input{width:auto;margin-top:2px;accent-color:var(--ink)}
+.lead .more{display:none;gap:10px} .lead .more.show{display:grid}
+.lead .fine{font-size:12px;color:#2f353b;margin-top:2px}
+.lead .fine a{color:var(--ink);font-weight:700}
+.lead .x{position:absolute;right:12px;top:8px;background:none;border:0;font-size:28px;line-height:1;cursor:pointer;color:var(--ink);padding:4px}
+.lead .toast{background:var(--ink);color:#fff}
+.hp{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0!important}
+@media (max-width:640px){.lead{right:12px;left:12px;bottom:12px;width:auto;padding:20px 18px 16px}}
+/* privacy */
+.legal{padding:72px 0 96px}
+.legal h1{font-size:clamp(40px,6vw,72px);margin-top:14px}
+.legal .lede2{font-size:19px;margin-top:18px;max-width:60ch}
+.legal h2{font-size:24px;margin-top:40px}
+.legal p{font-size:16.5px;color:var(--soft);max-width:68ch;margin-top:10px;line-height:1.65}
+.legal a{color:var(--ink);font-weight:700}
+/* the guest scheduler */
+.sch-ep{margin-top:30px;background:var(--ink);color:#fff;border-radius:14px;padding:18px 22px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.sch-ep b{font-weight:900;font-size:clamp(19px,2.3vw,26px);letter-spacing:-.01em;line-height:1.2}
+.sch-app{margin-top:22px;background:#fff;border:1px solid var(--gray);border-radius:16px;padding:30px}
+.sch-app h2{font-size:clamp(26px,3vw,36px)}
+.sch-app .sub2{font-size:16px;color:var(--soft);margin-top:10px;max-width:64ch;line-height:1.6}
+.sch-note{background:var(--lime);border-radius:10px;padding:12px 14px;font-weight:600;font-size:14.5px;margin:16px 0 0}
+.sch-note.bad{background:#fff;border:1.5px solid var(--ink)}
+.sch-tz{font-size:12px;color:var(--muted);font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin:18px 0 6px}
+.sch-day{display:grid;grid-template-columns:130px 1fr;gap:12px;align-items:start;padding:14px 0;border-top:1px solid var(--gray)}
+.sch-day h4{font-weight:800;font-size:14px;margin-top:9px}
+.sch-times{display:flex;flex-wrap:wrap;gap:8px}
+.sch-t{font-family:inherit;font-weight:700;font-size:14px;padding:9px 12px;border-radius:8px;border:1.5px solid var(--ink);background:#fff;color:var(--ink);cursor:pointer;min-width:96px;transition:box-shadow .12s ease}
+.sch-t:hover{box-shadow:inset 0 -5px 0 var(--lime)}
+.sch-t.on{background:var(--lime);box-shadow:3px 3px 0 var(--ink)}
+.sch-more{margin-top:12px}
+.sch-bar{position:sticky;bottom:0;background:#fff;border-top:1px solid var(--gray);padding:14px 0 6px;margin-top:22px;display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;justify-content:space-between;z-index:3}
+.sch-count{font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+.sch-form{display:grid;gap:14px;margin-top:26px;padding-top:22px;border-top:2px solid var(--ink)}
+.sch-form h3{font-size:20px}
+.sch-radio{display:flex;gap:10px;flex-wrap:wrap}
+.sch-radio label{display:flex;gap:8px;align-items:center;font-weight:600;border:1.5px solid var(--gray);border-radius:8px;padding:10px 12px;font-size:14.5px}
+.sch-radio input{width:auto;accent-color:var(--ink)}
+.sch-big{font-weight:900;font-size:clamp(24px,3vw,34px);letter-spacing:-.01em;line-height:1.15;margin-top:12px}
+.sch-list{margin:14px 0 0 20px;font-weight:600;line-height:1.8}
+.sch-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.sch-none{margin-top:16px;display:grid;gap:10px;max-width:560px}
+@media (max-width:640px){.sch-app{padding:20px}.sch-day{grid-template-columns:1fr;gap:6px}.sch-t{min-width:0;flex:1 1 28%}}
 </style>
 </head><body>
 <nav class="nav" aria-label="Main"><div class="wrap">
@@ -257,17 +331,18 @@ footer .fine a{color:#fff}
     <h2>Should America keep <span class="hl">fluoridating its water?</span></h2>
     <p class="who">Two people who have spent their careers on opposite sides of this one. We'll name them when the episode is booked. Until then, where do you land?</p>
   </div>
-  <div class="vote" id="vote">
+  <div class="vote" id="vote" data-pk="fluoride">
     <div class="ask hand">Pick a side.</div>
-    <div class="row"><button type="button" data-side="yes">YES</button><button type="button" data-side="no">NO</button></div>
-    <div class="tally" id="tally">We'll show where everyone landed when the episode comes out.</div>
+    <div class="pk-btns"><div class="row"><button type="button" data-side="yes">YES</button><button type="button" data-side="no">NO</button></div>
+    <div class="tally">Vote to see where everyone landed.</div></div>
+    <div class="pk-res" hidden></div>
   </div>
 </div></section>
 
 <section class="s" id="questions"><div class="wrap">
   <div class="head"><div><div class="eyebrow">Season one</div><h2>Pick a <span class="hl">question.</span></h2></div><p>Each one gets an episode: one question, two people who see it differently, and an honest conversation about it. No talking points, no PR answers.</p></div>
   <div class="chips" role="group" aria-label="Filter by topic"><button type="button" data-topic="All" class="on" aria-pressed="true">All</button><button type="button" data-topic="Public health">Public health</button><button type="button" data-topic="Business">Business</button><button type="button" data-topic="Technology">Technology</button><button type="button" data-topic="Insurance">Insurance</button><button type="button" data-topic="Workforce">Workforce</button><button type="button" data-topic="Clinical">Clinical</button></div>
-  <div class="qs"><article class="q" data-topic="Public health"><div class="k"><span class="t">PUBLIC HEALTH</span><span class="n">01</span></div><h3>Should America keep <span class="hl">fluoridating its&nbsp;water?</span></h3><p>Seventy years of evidence on one side. State bans and a federal review on the other.</p></article><article class="q" data-topic="Business"><div class="k"><span class="t">BUSINESS</span><span class="n">02</span></div><h3>Is private equity <span class="hl">saving dentistry or wrecking&nbsp;it?</span></h3><p>Debt relief for new grads, or quotas and settlements. Both are true. Which one matters more?</p></article><article class="q" data-topic="Technology"><div class="k"><span class="t">TECHNOLOGY</span><span class="n">03</span></div><h3>Should AI read your X&#8209;rays <span class="hl">before a dentist&nbsp;does?</span></h3><p>Consistent diagnosis, or dentists who stop looking and a liability nobody has priced.</p></article><article class="q" data-topic="Insurance"><div class="k"><span class="t">INSURANCE</span><span class="n">04</span></div><h3>Is dental insurance <span class="hl">a&nbsp;scam?</span></h3><p>The annual maximum hasn't moved since the 1970s. Thirty-seven states passed reform laws last year.</p></article><article class="q" data-topic="Workforce"><div class="k"><span class="t">WORKFORCE</span><span class="n">05</span></div><h3>Should hygienists work <span class="hl">without a dentist in the&nbsp;building?</span></h3><p>Sixty million Americans live where there aren't enough dentists. Who fills the gap?</p></article><article class="q" data-topic="Clinical"><div class="k"><span class="t">CLINICAL</span><span class="n">06</span></div><h3>Are we treating people <span class="hl">who don't need&nbsp;it?</span></h3><p>Fee for service rewards volume. Quotas reward volume. Where does the patient come in?</p></article></div>
+  <div class="qs"><article class="q" id="q-fluoride" data-topic="Public health"><div class="k"><span class="t">PUBLIC HEALTH</span><span class="n">01</span></div><h3>Should America keep <span class="hl">fluoridating its&nbsp;water?</span></h3><p>Seventy years of evidence on one side. State bans and a federal review on the other.</p><div class="pk" data-pk="fluoride"><span class="ask hand">Pick a side.</span><span class="pk-btns"><button type="button" class="pk-b y" data-side="yes">YES</button> <button type="button" class="pk-b n" data-side="no">NO</button></span><div class="pk-res" hidden></div></div></article><article class="q" id="q-private-equity" data-topic="Business"><div class="k"><span class="t">BUSINESS</span><span class="n">02</span></div><h3>Is private equity <span class="hl">saving dentistry or wrecking&nbsp;it?</span></h3><p>Debt relief for new grads, or quotas and settlements. Both are true. Which one matters more?</p><div class="pk" data-pk="private-equity"><span class="ask hand">Pick a side.</span><span class="pk-btns"><button type="button" class="pk-b y" data-side="yes">YES</button> <button type="button" class="pk-b n" data-side="no">NO</button></span><div class="pk-res" hidden></div></div></article><article class="q" id="q-ai-xrays" data-topic="Technology"><div class="k"><span class="t">TECHNOLOGY</span><span class="n">03</span></div><h3>Should AI read your X&#8209;rays <span class="hl">before a dentist&nbsp;does?</span></h3><p>Consistent diagnosis, or dentists who stop looking and a liability nobody has priced.</p><div class="pk" data-pk="ai-xrays"><span class="ask hand">Pick a side.</span><span class="pk-btns"><button type="button" class="pk-b y" data-side="yes">YES</button> <button type="button" class="pk-b n" data-side="no">NO</button></span><div class="pk-res" hidden></div></div></article><article class="q" id="q-insurance" data-topic="Insurance"><div class="k"><span class="t">INSURANCE</span><span class="n">04</span></div><h3>Is dental insurance <span class="hl">a&nbsp;scam?</span></h3><p>The annual maximum hasn't moved since the 1970s. Thirty-seven states passed reform laws last year.</p><div class="pk" data-pk="insurance"><span class="ask hand">Pick a side.</span><span class="pk-btns"><button type="button" class="pk-b y" data-side="yes">YES</button> <button type="button" class="pk-b n" data-side="no">NO</button></span><div class="pk-res" hidden></div></div></article><article class="q" id="q-hygienists" data-topic="Workforce"><div class="k"><span class="t">WORKFORCE</span><span class="n">05</span></div><h3>Should hygienists work <span class="hl">without a dentist in the&nbsp;building?</span></h3><p>Sixty million Americans live where there aren't enough dentists. Who fills the gap?</p><div class="pk" data-pk="hygienists"><span class="ask hand">Pick a side.</span><span class="pk-btns"><button type="button" class="pk-b y" data-side="yes">YES</button> <button type="button" class="pk-b n" data-side="no">NO</button></span><div class="pk-res" hidden></div></div></article><article class="q" id="q-overtreatment" data-topic="Clinical"><div class="k"><span class="t">CLINICAL</span><span class="n">06</span></div><h3>Are we treating people <span class="hl">who don't need&nbsp;it?</span></h3><p>Fee for service rewards volume. Quotas reward volume. Where does the patient come in?</p><div class="pk" data-pk="overtreatment"><span class="ask hand">Pick a side.</span><span class="pk-btns"><button type="button" class="pk-b y" data-side="yes">YES</button> <button type="button" class="pk-b n" data-side="no">NO</button></span><div class="pk-res" hidden></div></div></article></div>
   <div class="platforms">Coming to <span class="p">YouTube</span><span class="p">Spotify</span><span class="p">Apple Podcasts</span> in January.</div>
 </div></section>
 
@@ -336,10 +411,34 @@ footer .fine a{color:#fff}
 
 <section class="sub lime-bg" id="subscribe" aria-label="Get the first episode"><div class="wrap">
   <div><h2>Never miss a Tuesday.</h2><p class="subl">Get the first episode the morning it drops. One email when each episode is out. That's it.</p></div>
-  <form onsubmit="return ddSubmit(event,'Newsletter signup')"><input type="email" id="nl-email" name="email" required placeholder="you@practice.com" aria-label="Email address" autocomplete="email"><button class="btn ink" type="submit">Subscribe</button><div class="toast">You're on the list.</div><div class="err"></div></form>
+  <form onsubmit="return ddSubscribe(event)"><input type="email" id="nl-email" name="email" required placeholder="you@practice.com" aria-label="Email address" autocomplete="email"><button class="btn ink" type="submit">Subscribe</button><div class="toast">You're on the list.</div><div class="err"></div></form>
 </div></section>
 </main>
 
+<div class="lead" id="lead" hidden role="dialog" aria-labelledby="lead-h">
+  <button type="button" class="x" aria-label="Close">&times;</button>
+  <h3 id="lead-h">Want to know where dentistry landed?</h3>
+  <p>We'll email you the results when the episode drops, and new episodes after that. Nothing else.</p>
+  <form>
+    <input type="email" name="email" required placeholder="you@practice.com" aria-label="Email address" autocomplete="email">
+    <select name="role" aria-label="What you do">
+      <option value="">What do you do? (optional)</option>
+      <option>Dentist, practice owner</option><option>Associate dentist</option><option>Hygienist</option><option>Dental assistant</option>
+      <option>Office manager or front desk</option><option>DSO or group leadership</option><option>Vendor, consultant or tech</option>
+      <option>Student or resident</option><option>Other</option>
+    </select>
+    <div class="opt"><b>Only if it applies</b>
+      <label><input type="checkbox" name="hiring" value="1"> I'm hiring. Dentele Group can reach out.</label>
+      <label><input type="checkbox" name="openrole" value="1"> I'm open to a new role. Dentele Group can reach out.</label>
+      <label><input type="checkbox" name="phones" value="1"> Our front desk can't keep up with the phones. AiroDental can reach out.</label>
+    </div>
+    <div class="more"><input name="name" placeholder="Your name" aria-label="Your name" autocomplete="name"><input name="company" placeholder="Practice or company" aria-label="Practice or company" autocomplete="organization"></div>
+    <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <input type="hidden" name="q"><input type="hidden" name="side">
+    <div><button class="btn ink" type="submit">Send me the results</button><div class="toast">You're on the list.</div><div class="err"></div></div>
+    <p class="fine">Your vote stays anonymous either way. We only use your email for what you pick here. <a href="/privacy/">Privacy</a></p>
+  </form>
+</div>
 <footer><div class="wrap">
   <div class="top">
     <div><img src="/assets/logo-white-lime.svg" alt="Dentistry Disputed" width="204" height="34"><div class="tl hand">Pick a side.</div></div>
@@ -348,6 +447,7 @@ footer .fine a{color:#fff}
       <li><a href="/#suggest">Suggest a question</a></li>
       <li><a href="mailto:sponsors@dentistrydisputed.com">Sponsors</a></li>
       <li><a href="mailto:press@dentistrydisputed.com">Press</a></li>
+      <li><a href="/privacy/">Privacy</a></li>
     </ul>
   </div>
   <div class="fine">
@@ -375,11 +475,123 @@ async function ddSubmit(e, kind){
 </script>
 <script>
 (function(){
-  var v=document.getElementById('vote'); if(v){ var voted=null;
-    try{voted=localStorage.getItem('dd_vote_001');}catch(e){}
-    function paint(){v.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.dataset.side===voted); b.setAttribute('aria-pressed', b.dataset.side===voted ? 'true':'false');}); if(voted){document.getElementById('tally').textContent='You said '+voted+'. We\'ll show where everyone landed when the episode comes out.';}}
-    v.querySelectorAll('button').forEach(function(b){b.addEventListener('click',function(){voted=b.dataset.side; try{localStorage.setItem('dd_vote_001',voted);}catch(e){} paint();})});
-    paint(); }
+  var API = "https://script.google.com/macros/s/AKfycbypPXJT6DHX6_v-mBlTYHV40gCF-sczAYdS-30GoFa7S-p4vHgErRhxdz__N3iJEU9q/exec";
+  var QT = {"fluoride":"Should America keep fluoridating its water?","private-equity":"Is private equity saving dentistry or wrecking it?","ai-xrays":"Should AI read your X-rays before a dentist does?","insurance":"Is dental insurance a scam?","hygienists":"Should hygienists work without a dentist in the building?","overtreatment":"Are we treating people who don't need it?"};
+  function load(k){ try { return localStorage.getItem(k); } catch(e) { return null; } }
+  function store(k, v){ try { localStorage.setItem(k, v); } catch(e) {} }
+  function vid(){
+    var v = load('dd_vid');
+    if (!v) { v = (window.crypto && crypto.randomUUID ? crypto.randomUUID() : (Date.now().toString(36) + Math.random().toString(36).slice(2))).replace(/[^A-Za-z0-9-]/g, ''); store('dd_vid', v); }
+    return v;
+  }
+  var src = null; try { src = JSON.parse(load('dd_src') || 'null'); } catch(e) {}
+  if (!src) {
+    var u = new URLSearchParams(location.search), ref = '';
+    try { ref = document.referrer ? new URL(document.referrer).hostname : ''; } catch(e) {}
+    src = { s: u.get('utm_source') || '', m: u.get('utm_medium') || '', c: u.get('utm_campaign') || '', r: ref };
+    if (!src.s && ref && ref.indexOf('dentistrydisputed.com') === -1) src.s = ref;
+    store('dd_src', JSON.stringify(src));
+  }
+  var votes = {}; try { votes = JSON.parse(load('dd_votes') || '{}'); } catch(e) {}
+  var old = load('dd_vote_001'); if (old && !votes.fluoride) { votes.fluoride = old; store('dd_votes', JSON.stringify(votes)); }
+  var results = {};
+  var dev = window.matchMedia && matchMedia('(max-width:640px)').matches ? 'mobile' : 'desktop';
+  function post(body){ return fetch(API, { method: 'POST', body: JSON.stringify(body) }).then(function(r){ return r.json(); }); }
+  function widgets(q){ return document.querySelectorAll('[data-pk="' + q + '"]'); }
+  function paint(q){
+    var side = votes[q], res = results[q];
+    widgets(q).forEach(function(w){
+      var btns = w.querySelector('.pk-btns'), out = w.querySelector('.pk-res');
+      if (!side) { btns.hidden = false; out.hidden = true; return; }
+      btns.hidden = true; out.hidden = false;
+      var html = '';
+      if (res && res.show) {
+        html += '<div class="pk-bar" role="img" aria-label="Yes ' + res.yes + ' percent, no ' + res.no + ' percent"><i class="y" style="width:' + res.yes + '%"></i><i class="n" style="width:' + res.no + '%"></i></div>' +
+                '<div class="pk-lbl"><span>YES ' + res.yes + '%</span><span>NO ' + res.no + '%</span></div>';
+      }
+      var note = res === 'wait' ? 'Counting... ' : (res && res.show === false ? 'Too early to call. Results show once more people pick a side. ' : '');
+      html += '<div class="pk-you">You said <b>' + side + '</b>. ' + note +
+              '<button type="button" class="pk-link" data-act="change">Change</button> &middot; <button type="button" class="pk-link" data-act="share">Share</button></div>';
+      out.innerHTML = html;
+    });
+  }
+  function fetchResults(qs){
+    if (!API || !qs.length) return;
+    fetch(API + '?a=results&q=' + encodeURIComponent(qs.join(','))).then(function(r){ return r.json(); }).then(function(d){
+      if (d && d.results) Object.keys(d.results).forEach(function(q){ results[q] = d.results[q]; paint(q); });
+    }).catch(function(){});
+  }
+  function vote(q, side){
+    votes[q] = side; store('dd_votes', JSON.stringify(votes));
+    results[q] = API ? 'wait' : null; paint(q);
+    if (API) {
+      post({ a: 'vote', q: q, side: side, vid: vid(), qt: QT[q] || '', src: src.s, med: src.m, cmp: src.c, ref: src.r, dev: dev })
+        .then(function(d){ results[q] = d && d.ok ? d.result : null; paint(q); })
+        .catch(function(){ results[q] = null; paint(q); });
+    }
+    openLead(q, side);
+  }
+  function share(q){
+    var url = 'https://dentistrydisputed.com/vote/?q=' + q + '&utm_source=share&utm_medium=vote';
+    var text = (QT[q] || 'Pick a side.') + ' Pick a side:';
+    if (navigator.share) { navigator.share({ title: 'Dentistry Disputed', text: text, url: url }).catch(function(){}); return; }
+    try { navigator.clipboard.writeText(text + ' ' + url); } catch(e) {}
+    widgets(q).forEach(function(w){ var y = w.querySelector('.pk-you'); if (y) { var s = document.createElement('span'); s.textContent = ' Link copied.'; y.appendChild(s); } });
+  }
+  document.querySelectorAll('[data-pk]').forEach(function(w){
+    var q = w.getAttribute('data-pk');
+    w.addEventListener('click', function(e){
+      var b = e.target.closest('button'); if (!b) return;
+      if (b.dataset.side) vote(q, b.dataset.side);
+      else if (b.dataset.act === 'change') { widgets(q).forEach(function(x){ x.querySelector('.pk-btns').hidden = false; x.querySelector('.pk-res').hidden = true; }); }
+      else if (b.dataset.act === 'share') share(q);
+    });
+  });
+  var voted = Object.keys(votes); voted.forEach(paint); fetchResults(voted);
+  // deep link: /#q-fluoride scrolls to the card
+  if (location.hash && location.hash.indexOf('#q-') === 0) { var el = document.getElementById(location.hash.slice(1)); if (el) setTimeout(function(){ el.scrollIntoView({ block: 'center' }); }, 200); }
+
+  // lead panel
+  var lead = document.getElementById('lead');
+  function openLead(q, side){
+    if (!lead || !API || load('dd_lead')) return;
+    lead.querySelector('[name=q]').value = q; lead.querySelector('[name=side]').value = side;
+    lead.hidden = false; requestAnimationFrame(function(){ lead.classList.add('show'); });
+  }
+  function closeLead(why){ if (!lead) return; store('dd_lead', why); lead.classList.remove('show'); setTimeout(function(){ lead.hidden = true; }, 260); }
+  if (lead) {
+    lead.querySelector('.x').addEventListener('click', function(){ closeLead('dismissed'); });
+    var opts = lead.querySelectorAll('.opt input'), more = lead.querySelector('.more');
+    opts.forEach(function(o){ o.addEventListener('change', function(){ more.classList.toggle('show', [].some.call(opts, function(x){ return x.checked; })); }); });
+    lead.querySelector('form').addEventListener('submit', function(e){
+      e.preventDefault();
+      var f = e.target, btn = f.querySelector('button[type=submit]'), ok = f.querySelector('.toast'), err = f.querySelector('.err');
+      var d = Object.fromEntries(new FormData(f).entries());
+      btn.disabled = true; err.classList.remove('show');
+      post({ a: 'lead', email: d.email, name: d.name || '', role: d.role || '', company: d.company || '', news: true,
+             hiring: !!d.hiring, openrole: !!d.openrole, phones: !!d.phones, q: d.q, side: d.side, vid: vid(),
+             src: src.s, med: src.m, cmp: src.c, where: 'vote panel', hp: d.website || '' })
+        .then(function(r){ if (!r || !r.ok) throw new Error('no'); ok.classList.add('show'); setTimeout(function(){ closeLead('done'); }, 2200); })
+        .catch(function(){ err.textContent = 'That didn\'t go through. Try again, or email podcast@dentistrydisputed.com.'; err.classList.add('show'); btn.disabled = false; });
+    });
+  }
+  // newsletter signups go to the same sheet; FormSubmit is the fallback
+  window.ddSubscribe = function(e){
+    e.preventDefault();
+    var f = e.target, ok = f.querySelector('.toast'), err = f.querySelector('.err'), btn = f.querySelector('button[type=submit]');
+    var email = f.querySelector('[name=email]').value;
+    if (!API) return window.ddSubmit(e, 'Newsletter signup');
+    btn.disabled = true; err.classList.remove('show');
+    post({ a: 'subscribe', email: email, vid: vid(), src: src.s, med: src.m, cmp: src.c, where: 'subscribe form' })
+      .then(function(r){ if (!r || !r.ok) throw new Error('no'); ok.classList.add('show'); f.reset(); store('dd_lead', 'done'); })
+      .catch(function(){ return window.ddSubmit(e, 'Newsletter signup'); })
+      .then(function(){ btn.disabled = false; });
+    return false;
+  };
+})();
+</script>
+<script>
+(function(){
   var chips=document.querySelectorAll('.chips button'), cards=document.querySelectorAll('.q');
   chips.forEach(function(c){c.addEventListener('click',function(){
     chips.forEach(function(x){x.classList.toggle('on',x===c); x.setAttribute('aria-pressed', x===c ? 'true':'false');});
