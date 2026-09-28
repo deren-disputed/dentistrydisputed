@@ -21,10 +21,12 @@ a{color:inherit}
 .eyebrow b{color:var(--ink);font-weight:900;margin:0 .4em}
 .nw{white-space:nowrap}
 .dark .eyebrow{color:#b9bcbf} .dark .eyebrow b{color:var(--lime)}
-h1,h2,h3{font-weight:900;letter-spacing:-.02em;line-height:1.04}
+h1,h2,h3{font-weight:900;letter-spacing:-.02em;line-height:1.1;isolation:isolate}
 h2{font-size:clamp(34px,4.4vw,54px)}
 h3{font-size:21px;font-weight:800;letter-spacing:-.01em;line-height:1.2}
-.hl{background:linear-gradient(177deg,transparent 9%,var(--lime) 9%,var(--lime) 91%,transparent 91%);padding:0 .18em;border-radius:5px 16px 7px 14px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.hl{background:linear-gradient(177deg,transparent 9%,var(--lime) 9%,var(--lime) 91%,transparent 91%);padding:0 .18em;border-radius:5px 16px 7px 14px;-webkit-box-decoration-break:clone;box-decoration-break:clone;position:relative;z-index:-1}
+/* the streak paints first, every letter on top of it, so tails of p, g and y are never cut off */
+.hl .hlt{position:relative;z-index:1}
 .dark .hl{color:var(--ink)}
 .hand{font-family:'Rock Salt',cursive;font-weight:400;letter-spacing:0}
 .btn{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:15px 24px;border-radius:999px;border:2px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;font-family:inherit;transition:transform .15s ease,box-shadow .15s ease}
@@ -50,7 +52,7 @@ h3{font-size:21px;font-weight:800;letter-spacing:-.01em;line-height:1.2}
 .hero{padding:76px 0 70px;overflow:hidden}
 .hero .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:56px;align-items:center}
 .hero h1{font-size:clamp(38px,4.5vw,62px);margin-top:20px}
-.hero h1 .hl{display:inline;line-height:1.16}
+.hero h1 .hl{display:inline;line-height:1.2}
 .lede{font-size:18px;line-height:1.65;color:var(--soft);margin-top:24px;max-width:56ch}
 .ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
 .meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:28px;font-weight:800;font-size:11px;letter-spacing:.18em;color:var(--muted)}
@@ -95,10 +97,10 @@ h3{font-size:21px;font-weight:800;letter-spacing:-.01em;line-height:1.2}
 .vote{position:relative;background:var(--ink2);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:36px 30px 30px;text-align:center}
 .vote .ask{font-size:24px;color:var(--lime);transform:rotate(-4deg)}
 .vote .row{display:flex;justify-content:center;gap:22px;margin-top:26px}
-.vote button{font-family:inherit;font-weight:900;font-size:30px;padding:10px 26px 11px;border:0;border-radius:6px;cursor:pointer;box-shadow:0 8px 16px rgba(0,0,0,.35);transition:transform .15s ease}
+.vote button[data-side]{font-family:inherit;font-weight:900;font-size:30px;padding:10px 26px 11px;border:0;border-radius:6px;cursor:pointer;box-shadow:0 8px 16px rgba(0,0,0,.35);transition:transform .15s ease}
 .vote button[data-side=yes]{background:#fff;color:var(--ink);transform:rotate(-6deg)}
 .vote button[data-side=no]{background:var(--lime);color:var(--ink);transform:rotate(5deg)}
-.vote button:hover{transform:rotate(0) scale(1.05)}
+.vote button[data-side]:hover{transform:rotate(0) scale(1.05)}
 .vote button.on{outline:4px solid var(--lime);outline-offset:4px}
 .vote button[data-side=no].on{outline-color:#fff}
 .vote .tally{margin-top:24px;font-size:14px;color:#c9ccd0}
@@ -165,6 +167,8 @@ input:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0
 .sp:hover{border-color:var(--lime)}
 .sp .k{font-weight:800;font-size:11px;letter-spacing:.2em;color:var(--lime)}
 .sp .name{font-weight:900;font-size:clamp(30px,3.4vw,44px);letter-spacing:-.02em;margin-top:18px}
+.sp .name{display:flex;align-items:center;min-height:1.55em}
+.sp .name .wm{display:block;height:clamp(30px,3.2vw,42px);width:auto}
 .sp p{color:#c9ccd0;font-size:15.5px;margin-top:10px}
 .indep{margin-top:30px;color:#c9ccd0;font-size:15.5px;max-width:78ch}
 .indep b{color:#fff}
@@ -244,6 +248,9 @@ footer .fine a{color:#fff}
 .pk-link{font:inherit;font-weight:700;background:none;border:0;padding:0;color:inherit;text-decoration:underline;text-decoration-color:var(--lime);text-decoration-thickness:3px;text-underline-offset:3px;cursor:pointer}
 .dark .pk-bar{background:#2a3440} .dark .pk-bar .y{background:#fff}
 .dark .pk-lbl{color:#fff} .dark .pk-you{color:#c9ccd0} .dark .pk-you b{color:var(--lime)}
+.pk-mail{font:inherit;font-weight:800;font-size:12.5px;letter-spacing:.04em;background:var(--lime);color:var(--ink);border:2px solid var(--ink);border-radius:999px;padding:7px 14px 8px;margin-top:10px;cursor:pointer;transition:transform .12s ease}
+.pk-mail:hover{transform:translateY(-1px)} .dark .pk-mail{border-color:var(--lime)}
+.pk-got{font-size:12.5px;font-weight:700;margin-top:8px;color:var(--soft)} .dark .pk-got{color:#c9ccd0}
 .vote .pk-res{margin-top:22px;text-align:left}
 /* the lead panel after a first vote */
 .lead{position:fixed;right:20px;bottom:20px;z-index:80;width:min(420px,calc(100% - 32px));max-height:calc(100vh - 40px);overflow:auto;background:var(--lime);color:var(--ink);border-radius:16px;padding:24px 22px 18px;box-shadow:0 18px 40px rgba(16,24,32,.3);transform:translateY(24px);opacity:0;transition:transform .25s ease,opacity .25s ease}
@@ -317,7 +324,7 @@ footer .fine a{color:#fff}
 <header class="hero" id="top"><div class="wrap">
   <div>
     <div class="eyebrow"><span class="nw">A video podcast about dentistry <b>/</b></span> <span class="nw">Tuesdays, starting January 2027</span></div>
-    <h1>Everybody in dentistry has an opinion. <span class="hl">We find two sides who strongly disagree.</span></h1>
+    <h1>Everybody in dentistry has an opinion. <span class="hl"><span class="hlt">We find two sides who strongly disagree.</span></span></h1>
     <p class="lede">Dentists, hygienists, office managers, DSO execs, the people building the tech and the people stuck using it. One question the industry can't agree on, two people who see it differently, and a real conversation about it. About 45 minutes, on video, every Tuesday.</p>
     <div class="ctas"><a class="btn lime" href="#subscribe">Get the first episode</a><a class="btn" href="#guest">Come on the show</a></div>
     <div class="meta"><span>WITH <b>ALLISON NORRIS</b> &amp; <b>DR. DEREN FLESHER</b></span><span>VIDEO + AUDIO</span><span>SEASON 1</span></div>
@@ -328,12 +335,12 @@ footer .fine a{color:#fff}
     <div class="note hand">Same industry.<br>Different views.<svg class="swash" viewBox="0 0 300 32" preserveAspectRatio="none" aria-hidden="true"><path d="M6 22 C 60 10, 120 28, 180 16 S 268 8, 294 14" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/></svg></div>
   </div>
 </div></header>
-<div class="ticker" aria-hidden="true"><div class="track"><span>Should America keep fluoridating its water?</span><span>Is private equity saving dentistry or wrecking it?</span><span>Should AI read your X-rays before a dentist does?</span><span>Is dental insurance a scam?</span><span>Should hygienists work without a dentist in the building?</span><span>Are we treating people who don't need it?</span><span>Should America keep fluoridating its water?</span><span>Is private equity saving dentistry or wrecking it?</span><span>Should AI read your X-rays before a dentist does?</span><span>Is dental insurance a scam?</span><span>Should hygienists work without a dentist in the building?</span><span>Are we treating people who don't need it?</span></div></div>
+<div class="ticker" aria-hidden="true"><div class="track"><span>Should America keep fluoridating its water?</span><span>Is private equity wrecking dentistry?</span><span>Should AI read your X-rays before a dentist does?</span><span>Is dental insurance a scam?</span><span>Should hygienists work without a dentist in the building?</span><span>Are we treating people who don't need it?</span><span>Should America keep fluoridating its water?</span><span>Is private equity wrecking dentistry?</span><span>Should AI read your X-rays before a dentist does?</span><span>Is dental insurance a scam?</span><span>Should hygienists work without a dentist in the building?</span><span>Are we treating people who don't need it?</span></div></div>
 
 <section class="s dark first" id="first" aria-label="Up first"><div class="wrap">
   <div>
     <span class="chip">EP. 01 &middot; UP FIRST</span>
-    <h2>Should America keep <span class="hl">fluoridating its water?</span></h2>
+    <h2>Should America keep <span class="hl"><span class="hlt">fluoridating its water?</span></span></h2>
     <p class="who">Two people who have spent their careers on opposite sides of this one. We'll name them when the episode is booked. Until then, where do you land?</p>
   </div>
   <div class="vote" id="vote" data-pk="fluoride">
@@ -345,14 +352,14 @@ footer .fine a{color:#fff}
 </div></section>
 
 <section class="s" id="questions"><div class="wrap">
-  <div class="head"><div><div class="eyebrow">Season one</div><h2>Pick a <span class="hl">question.</span></h2></div><p>Each one gets an episode: one question, two people who see it differently, and an honest conversation about it. No talking points, no PR answers.</p></div>
+  <div class="head"><div><div class="eyebrow">Season one</div><h2>Pick a <span class="hl"><span class="hlt">question.</span></span></h2></div><p>Each one gets an episode: one question, two people who see it differently, and an honest conversation about it. No talking points, no PR answers.</p></div>
   <div class="chips" role="group" aria-label="Filter by topic"><button type="button" data-topic="All" class="on" aria-pressed="true">All</button><button type="button" data-topic="Public health">Public health</button><button type="button" data-topic="Business">Business</button><button type="button" data-topic="Technology">Technology</button><button type="button" data-topic="Insurance">Insurance</button><button type="button" data-topic="Workforce">Workforce</button><button type="button" data-topic="Clinical">Clinical</button></div>
-  <div class="qs"><article class="q" id="q-fluoride" data-topic="Public health"><div class="k"><span class="t">PUBLIC HEALTH</span><span class="n">01</span></div><h3>Should America keep <span class="hl">fluoridating its&nbsp;water?</span></h3><p>Seventy years of evidence on one side. State bans and a federal review on the other.</p><div class="pk" data-pk="fluoride"><span class="ask hand">Pick a side.</span><span class="pk-btns"><button type="button" class="pk-b y" data-side="yes">YES</button> <button type="button" class="pk-b n" data-side="no">NO</button></span><div class="pk-res" hidden></div></div></article><article class="q" id="q-private-equity" data-topic="Business"><div class="k"><span class="t">BUSINESS</span><span class="n">02</span></div><h3>Is private equity <span class="hl">saving dentistry or wrecking&nbsp;it?</span></h3><p>Debt relief for new grads, or quotas and settlements. Both are true. Which one matters more?</p><div class="pk" data-pk="private-equity"><span class="ask hand">Pick a side.</span><span class="pk-btns"><button type="button" class="pk-b y" data-side="yes">YES</button> <button type="button" class="pk-b n" data-side="no">NO</button></span><div class="pk-res" hidden></div></div></article><article class="q" id="q-ai-xrays" data-topic="Technology"><div class="k"><span class="t">TECHNOLOGY</span><span class="n">03</span></div><h3>Should AI read your X&#8209;rays <span class="hl">before a dentist&nbsp;does?</span></h3><p>Consistent diagnosis, or dentists who stop looking and a liability nobody has priced.</p><div class="pk" data-pk="ai-xrays"><span class="ask hand">Pick a side.</span><span class="pk-btns"><button type="button" class="pk-b y" data-side="yes">YES</button> <button type="button" class="pk-b n" data-side="no">NO</button></span><div class="pk-res" hidden></div></div></article><article class="q" id="q-insurance" data-topic="Insurance"><div class="k"><span class="t">INSURANCE</span><span class="n">04</span></div><h3>Is dental insurance <span class="hl">a&nbsp;scam?</span></h3><p>The annual maximum hasn't moved since the 1970s. Thirty-seven states passed reform laws last year.</p><div class="pk" data-pk="insurance"><span class="ask hand">Pick a side.</span><span class="pk-btns"><button type="button" class="pk-b y" data-side="yes">YES</button> <button type="button" class="pk-b n" data-side="no">NO</button></span><div class="pk-res" hidden></div></div></article><article class="q" id="q-hygienists" data-topic="Workforce"><div class="k"><span class="t">WORKFORCE</span><span class="n">05</span></div><h3>Should hygienists work <span class="hl">without a dentist in the&nbsp;building?</span></h3><p>Sixty million Americans live where there aren't enough dentists. Who fills the gap?</p><div class="pk" data-pk="hygienists"><span class="ask hand">Pick a side.</span><span class="pk-btns"><button type="button" class="pk-b y" data-side="yes">YES</button> <button type="button" class="pk-b n" data-side="no">NO</button></span><div class="pk-res" hidden></div></div></article><article class="q" id="q-overtreatment" data-topic="Clinical"><div class="k"><span class="t">CLINICAL</span><span class="n">06</span></div><h3>Are we treating people <span class="hl">who don't need&nbsp;it?</span></h3><p>Fee for service rewards volume. Quotas reward volume. Where does the patient come in?</p><div class="pk" data-pk="overtreatment"><span class="ask hand">Pick a side.</span><span class="pk-btns"><button type="button" class="pk-b y" data-side="yes">YES</button> <button type="button" class="pk-b n" data-side="no">NO</button></span><div class="pk-res" hidden></div></div></article></div>
+  <div class="qs"><article class="q" id="q-fluoride" data-topic="Public health"><div class="k"><span class="t">PUBLIC HEALTH</span><span class="n">01</span></div><h3>Should America keep <span class="hl"><span class="hlt">fluoridating its&nbsp;water?</span></span></h3><p>Seventy years of evidence on one side. State bans and a federal review on the other.</p><div class="pk" data-pk="fluoride"><span class="ask hand">Pick a side.</span><span class="pk-btns"><button type="button" class="pk-b y" data-side="yes">YES</button> <button type="button" class="pk-b n" data-side="no">NO</button></span><div class="pk-res" hidden></div></div></article><article class="q" id="q-private-equity" data-topic="Business"><div class="k"><span class="t">BUSINESS</span><span class="n">02</span></div><h3>Is private equity <span class="hl"><span class="hlt">wrecking&nbsp;dentistry?</span></span></h3><p>Quotas and settlements on one side. Debt relief for new grads and a way out for owners ready to retire on the other.</p><div class="pk" data-pk="private-equity"><span class="ask hand">Pick a side.</span><span class="pk-btns"><button type="button" class="pk-b y" data-side="yes">YES</button> <button type="button" class="pk-b n" data-side="no">NO</button></span><div class="pk-res" hidden></div></div></article><article class="q" id="q-ai-xrays" data-topic="Technology"><div class="k"><span class="t">TECHNOLOGY</span><span class="n">03</span></div><h3>Should AI read your X&#8209;rays <span class="hl"><span class="hlt">before a dentist&nbsp;does?</span></span></h3><p>Consistent diagnosis, or dentists who stop looking and a liability nobody has priced.</p><div class="pk" data-pk="ai-xrays"><span class="ask hand">Pick a side.</span><span class="pk-btns"><button type="button" class="pk-b y" data-side="yes">YES</button> <button type="button" class="pk-b n" data-side="no">NO</button></span><div class="pk-res" hidden></div></div></article><article class="q" id="q-insurance" data-topic="Insurance"><div class="k"><span class="t">INSURANCE</span><span class="n">04</span></div><h3>Is dental insurance <span class="hl"><span class="hlt">a&nbsp;scam?</span></span></h3><p>The annual maximum hasn't moved since the 1970s. Thirty-seven states passed reform laws last year.</p><div class="pk" data-pk="insurance"><span class="ask hand">Pick a side.</span><span class="pk-btns"><button type="button" class="pk-b y" data-side="yes">YES</button> <button type="button" class="pk-b n" data-side="no">NO</button></span><div class="pk-res" hidden></div></div></article><article class="q" id="q-hygienists" data-topic="Workforce"><div class="k"><span class="t">WORKFORCE</span><span class="n">05</span></div><h3>Should hygienists work <span class="hl"><span class="hlt">without a dentist in the&nbsp;building?</span></span></h3><p>Sixty million Americans live where there aren't enough dentists. Who fills the gap?</p><div class="pk" data-pk="hygienists"><span class="ask hand">Pick a side.</span><span class="pk-btns"><button type="button" class="pk-b y" data-side="yes">YES</button> <button type="button" class="pk-b n" data-side="no">NO</button></span><div class="pk-res" hidden></div></div></article><article class="q" id="q-overtreatment" data-topic="Clinical"><div class="k"><span class="t">CLINICAL</span><span class="n">06</span></div><h3>Are we treating people <span class="hl"><span class="hlt">who don't need&nbsp;it?</span></span></h3><p>Fee for service rewards volume. Quotas reward volume. Where does the patient come in?</p><div class="pk" data-pk="overtreatment"><span class="ask hand">Pick a side.</span><span class="pk-btns"><button type="button" class="pk-b y" data-side="yes">YES</button> <button type="button" class="pk-b n" data-side="no">NO</button></span><div class="pk-res" hidden></div></div></article></div>
   <div class="platforms">Coming to <span class="p">YouTube</span><span class="p">Spotify</span><span class="p">Apple Podcasts</span> in January.</div>
 </div></section>
 
 <section class="s white" id="how"><div class="wrap">
-  <div class="head"><div><div class="eyebrow">What an episode is like</div><h2>A real conversation, <span class="hl">not a panel.</span></h2></div><p>No scripts, no slides, no PR answers. Two people who disagree, two hosts who push both of them, and enough time to actually get somewhere.</p></div>
+  <div class="head"><div><div class="eyebrow">What an episode is like</div><h2>A real conversation, <span class="hl"><span class="hlt">not a panel.</span></span></h2></div><p>No scripts, no slides, no PR answers. Two people who disagree, two hosts who push both of them, and enough time to actually get somewhere.</p></div>
   <div class="steps">
     <div><div class="n">1</div><h3>One question</h3><p>Said plainly at the top, so nobody has to guess what we're talking about.</p></div>
     <div><div class="n">2</div><h3>Two people who disagree</h3><p>Not pundits. People who do this for a living and have already had this argument in real life.</p></div>
@@ -372,16 +379,16 @@ footer .fine a{color:#fff}
   <div class="hosts-head"><div><div class="eyebrow" style="color:var(--ink)">The hosts</div><h2>Nobody gets a free pass.</h2></div><div class="hand">Not even us.</div></div>
   <div class="hosts">
     <div class="host"><div class="ph"><img src="/assets/allison.webp" alt="Allison Norris" width="720" height="694"></div>
-      <div><span class="tag">ALLISON NORRIS</span><div class="role">HOST &middot; CEO, DENTELE GROUP</div><p>She has spent her career inside dental practices and knows what the people in them actually fight about. She asks the question everyone in the room is thinking and waits for a real answer.</p></div></div>
+      <div><span class="tag">ALLISON NORRIS</span><div class="role">HOST &middot; FORMER HYGIENIST, CEO OF DENTELE GROUP</div><p>She started as a dental hygienist and spent more than ten years chairside before founding Dentele Group. She knows what people in dental practices actually argue about, and she'll keep asking until she gets a real answer.</p></div></div>
     <div class="host"><div class="ph"><img class="d" src="/assets/deren.webp" alt="Dr. Deren Flesher" width="720" height="699"></div>
-      <div><span class="tag">DR. DEREN FLESHER</span><div class="role">HOST &middot; DENTIST, FOUNDER OF AIRODENTAL</div><p>Dentist and practice owner. He has been on both sides of most of these questions and will tell you which side he got wrong.</p></div></div>
+      <div><span class="tag">DR. DEREN FLESHER</span><div class="role">HOST &middot; DENTIST, FOUNDER OF AIRODENTAL</div><p>Dentist since 2013 and a practice owner who also builds software for dental offices. He's seen most of these questions from more than one side, and he'll tell you where he lands.</p></div></div>
   </div>
 </div></section>
 
 <section class="s" id="guest"><div class="wrap two">
   <div class="panel">
     <div class="eyebrow">Be a guest</div>
-    <h2>Got a strong opinion? <span class="hl">Say it on camera.</span></h2>
+    <h2>Got a strong opinion? <span class="hl"><span class="hlt">Say it on camera.</span></span></h2>
     <p class="l">Dentists, hygienists, office managers, DSO people, vendors, consultants. Anyone who actually works in this industry and has an opinion they'd say out loud. Tell us the question and where you stand. If it fits, Allison will reach out.</p>
     <form id="guestform" onsubmit="return ddSubmit(event,'apply')"><input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="row2"><label for="g-name">Name<input id="g-name" name="name" required autocomplete="name"></label><label for="g-email">Email<input id="g-email" name="email" type="email" required autocomplete="email"></label></div>
@@ -393,7 +400,7 @@ footer .fine a{color:#fff}
   </div>
   <div class="panel" id="suggest">
     <div class="eyebrow">Suggest a question</div>
-    <h2>What should we<br><span class="hl">take on next?</span></h2>
+    <h2>What should we<br><span class="hl"><span class="hlt">take on next?</span></span></h2>
     <p class="l">The question, why people disagree about it, and who you'd want to hear from. The good ones become episodes and we say your name on air.</p>
     <form id="qform" onsubmit="return ddSubmit(event,'suggest')"><input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
       <label for="m-q">The question<textarea id="m-q" name="question" placeholder="Is dental insurance a scam?" required></textarea></label>
@@ -406,9 +413,9 @@ footer .fine a{color:#fff}
 </div></section>
 
 <section class="s dark" id="sponsors"><div class="wrap">
-  <div class="head solo"><div><div class="eyebrow">Presented by</div><h2>Two founding sponsors.<br><span class="hl">No say in the conversation.</span></h2></div></div>
+  <div class="head solo"><div><div class="eyebrow">Presented by</div><h2>Two founding sponsors.<br><span class="hl"><span class="hlt">No say in the conversation.</span></span></h2></div></div>
   <div class="spon">
-    <a class="sp" href="https://airodental.com/?utm_source=dentistrydisputed&amp;utm_medium=site&amp;utm_campaign=s1" target="_blank" rel="noopener"><div class="k">FOUNDING SPONSOR</div><div class="name">AiroDental</div><p>The AI front office for dental practices: phones, scheduling and follow-up that never miss.</p></a>
+    <a class="sp" href="https://airodental.com/?utm_source=dentistrydisputed&amp;utm_medium=site&amp;utm_campaign=s1" target="_blank" rel="noopener"><div class="k">FOUNDING SPONSOR</div><div class="name"><img class="wm" src="/assets/airodental-wordmark-white.svg" alt="AiroDental" width="1000" height="148"></div><p>The AI front office for dental practices: phones, scheduling and follow-up that never miss.</p></a>
     <a class="sp" href="https://thedentelegroup.com/?utm_source=dentistrydisputed&amp;utm_medium=site&amp;utm_campaign=s1" target="_blank" rel="noopener"><div class="k">FOUNDING SPONSOR</div><div class="name">Dentele Group</div><p>Recruiting and staffing built for dental practices, from people who live in the industry every day.</p></a>
   </div>
   <p class="indep"><b>The deal with sponsors.</b> They buy the fifteen seconds at the top and the thirty seconds in the middle. They don't pick guests or questions, and nobody can pay to be on the show. Want the third seat? <a href="mailto:sponsors@dentistrydisputed.com">sponsors@dentistrydisputed.com</a></p>
@@ -463,7 +470,7 @@ footer .fine a{color:#fff}
 <script>
 (function(){
   var API = "https://script.google.com/macros/s/AKfycbypPXJT6DHX6_v-mBlTYHV40gCF-sczAYdS-30GoFa7S-p4vHgErRhxdz__N3iJEU9q/exec";
-  var QT = {"fluoride":"Should America keep fluoridating its water?","private-equity":"Is private equity saving dentistry or wrecking it?","ai-xrays":"Should AI read your X-rays before a dentist does?","insurance":"Is dental insurance a scam?","hygienists":"Should hygienists work without a dentist in the building?","overtreatment":"Are we treating people who don't need it?"};
+  var QT = {"fluoride":"Should America keep fluoridating its water?","private-equity":"Is private equity wrecking dentistry?","ai-xrays":"Should AI read your X-rays before a dentist does?","insurance":"Is dental insurance a scam?","hygienists":"Should hygienists work without a dentist in the building?","overtreatment":"Are we treating people who don't need it?"};
   function load(k){ try { return localStorage.getItem(k); } catch(e) { return null; } }
   function store(k, v){ try { localStorage.setItem(k, v); } catch(e) {} }
   function vid(){
@@ -481,6 +488,7 @@ footer .fine a{color:#fff}
   var votes = {}; try { votes = JSON.parse(load('dd_votes') || '{}'); } catch(e) {}
   var old = load('dd_vote_001'); if (old && !votes.fluoride) { votes.fluoride = old; store('dd_votes', JSON.stringify(votes)); }
   var results = {};
+  var preview = u.get('lead') === 'preview';   // dentistrydisputed.com/?lead=preview shows the email ask as a new visitor sees it
   var dev = window.matchMedia && matchMedia('(max-width:640px)').matches ? 'mobile' : 'desktop';
   function post(body){ return fetch(API, { method: 'POST', body: JSON.stringify(body) }).then(function(r){ return r.json(); }); }
   function widgets(q){ return document.querySelectorAll('[data-pk="' + q + '"]'); }
@@ -498,6 +506,8 @@ footer .fine a{color:#fff}
       var note = res === 'wait' ? 'Counting... ' : (res && res.show === false ? 'Too early to call. Results show once more people pick a side. ' : '');
       html += '<div class="pk-you">You said <b>' + side + '</b>. ' + note +
               '<button type="button" class="pk-link" data-act="change">Change</button> &middot; <button type="button" class="pk-link" data-act="share">Share</button></div>';
+      html += load('dd_lead') === 'done' && !preview ? '<div class="pk-got">You&rsquo;re on the list. We&rsquo;ll email you where it landed.</div>'
+                                         : '<button type="button" class="pk-mail" data-act="lead">Email me where it lands</button>';
       out.innerHTML = html;
     });
   }
@@ -531,6 +541,7 @@ footer .fine a{color:#fff}
       if (b.dataset.side) vote(q, b.dataset.side);
       else if (b.dataset.act === 'change') { widgets(q).forEach(function(x){ x.querySelector('.pk-btns').hidden = false; x.querySelector('.pk-res').hidden = true; }); }
       else if (b.dataset.act === 'share') share(q);
+      else if (b.dataset.act === 'lead') openLead(q, votes[q] || '', true);
     });
   });
   var voted = Object.keys(votes); voted.forEach(paint); fetchResults(voted);
@@ -539,12 +550,15 @@ footer .fine a{color:#fff}
 
   // lead panel
   var lead = document.getElementById('lead');
-  function openLead(q, side){
-    if (!lead || !API || load('dd_lead')) return;
+  // the panel opens after a vote unless they already signed up, or closed it in the last week.
+  function openLead(q, side, force){
+    if (!lead || !API) return;
+    var st = load('dd_lead') || '', t = Number(st.split(':')[1] || 0);
+    if (!force && !preview && (st === 'done' || (st.indexOf('dismissed') === 0 && t && Date.now() - t < 7 * 864e5))) return;
     lead.querySelector('[name=q]').value = q; lead.querySelector('[name=side]').value = side;
     lead.hidden = false; requestAnimationFrame(function(){ lead.classList.add('show'); });
   }
-  function closeLead(why){ if (!lead) return; store('dd_lead', why); lead.classList.remove('show'); setTimeout(function(){ lead.hidden = true; }, 260); }
+  function closeLead(why){ if (!lead) return; store('dd_lead', why === 'dismissed' ? 'dismissed:' + Date.now() : why); lead.classList.remove('show'); setTimeout(function(){ lead.hidden = true; }, 260); Object.keys(votes).forEach(paint); }
   if (lead) {
     lead.querySelector('.x').addEventListener('click', function(){ closeLead('dismissed'); });
     var opts = lead.querySelectorAll('.opt input'), more = lead.querySelector('.more');
@@ -576,7 +590,7 @@ footer .fine a{color:#fff}
       .then(function(r){
         if (!r || !r.ok) throw new Error(r && r.error || 'no');
         ok.textContent = r.fresh ? "You're on the list. Check your inbox for a welcome note." : "You're already on the list. We'll email you when the first episode drops.";
-        ok.classList.add('show'); f.reset(); store('dd_lead', 'done');
+        ok.classList.add('show'); f.reset(); store('dd_lead', 'done'); Object.keys(votes).forEach(paint);
       })
       .catch(function(x){
         if (String(x && x.message) === 'bad_email') { err.textContent = 'That email address doesn\'t look right. Check it and try again.'; err.classList.add('show'); return; }
