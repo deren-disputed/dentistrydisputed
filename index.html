@@ -484,14 +484,13 @@ async function ddSubmit(e, kind){
     if (!v) { v = (window.crypto && crypto.randomUUID ? crypto.randomUUID() : (Date.now().toString(36) + Math.random().toString(36).slice(2))).replace(/[^A-Za-z0-9-]/g, ''); store('dd_vid', v); }
     return v;
   }
+  // where this visitor came from: a tagged link or another site wins, otherwise keep what we knew
+  var u = new URLSearchParams(location.search), ref = '';
+  try { ref = document.referrer ? new URL(document.referrer).hostname : ''; } catch(e) {}
+  var fresh = { s: u.get('utm_source') || '', m: u.get('utm_medium') || '', c: u.get('utm_campaign') || '', r: ref };
+  if (!fresh.s && ref && ref.indexOf('dentistrydisputed.com') === -1) fresh.s = ref;
   var src = null; try { src = JSON.parse(load('dd_src') || 'null'); } catch(e) {}
-  if (!src) {
-    var u = new URLSearchParams(location.search), ref = '';
-    try { ref = document.referrer ? new URL(document.referrer).hostname : ''; } catch(e) {}
-    src = { s: u.get('utm_source') || '', m: u.get('utm_medium') || '', c: u.get('utm_campaign') || '', r: ref };
-    if (!src.s && ref && ref.indexOf('dentistrydisputed.com') === -1) src.s = ref;
-    store('dd_src', JSON.stringify(src));
-  }
+  if (fresh.s || !src) { src = fresh; store('dd_src', JSON.stringify(src)); }
   var votes = {}; try { votes = JSON.parse(load('dd_votes') || '{}'); } catch(e) {}
   var old = load('dd_vote_001'); if (old && !votes.fluoride) { votes.fluoride = old; store('dd_votes', JSON.stringify(votes)); }
   var results = {};
